@@ -27284,6 +27284,7 @@ parcelHelpers.export(exports, "MainView", ()=>MainView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _filmCard = require("../film-card/film-card");
+var _filmDetails = require("../film-details/film-details");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
@@ -27292,7 +27293,7 @@ const MainView = ()=>{
             id: 001,
             Title: "Pet Sematary",
             Summary: "Doctor Louis Creed (Dale Midkiff) moves his family to Maine, where he meets a friendly local named Jud Crandall (Fred Gwynne). After the Creeds' cat is accidentally killed, Crandall advises Louis to bury it in the ground near the old pet cemetery. The cat returns to life, its personality changed for the worse. When Louis' son, Gage (Miko Hughes), dies tragically, Louis decides to bury the boy's body in the same ground despite the warnings of Crandall and Louis' visions of a deceased patient.",
-            Image: "https://www.allposters.com/-sp/PET-SEMATARY-1989-directed-by-MARY-LAMBERT-Posters_i15760214_.htm?AID=96280778&ProductTarget=15760214&gclid=CjwKCAiAlp2fBhBPEiwA2Q10D8x32aOqRC66XiyYiADxr3W2ERQzm2cquULkvmRCP7_yhRDgZ7xr6RoCR5oQAvD_BwE&utm_campaign=PLA&utm_medium=cpc&utm_source=google",
+            Image: "https://via.placeholder.com/250x350",
             Director: {
                 "$oid": "63d1a1b20a55cd1085fd7859"
             },
@@ -27309,7 +27310,7 @@ const MainView = ()=>{
             id: 002,
             Title: "Magnolia",
             Summary: "On one random day in the San Fernando Valley, a dying father, a young wife, a male caretaker, a famous lost son, a police officer in love, a boy genius, an ex-boy genius, a game show host and an estranged daughter will each become part of a dazzling multiplicity of plots, but one story.",
-            Image: "image.png",
+            Image: "https://via.placeholder.com/250x350",
             Director: {
                 "$oid": "63d1a05f0a55cd1085fd7851"
             },
@@ -27320,21 +27321,39 @@ const MainView = ()=>{
             ]
         }
     ]);
+    const [selectedFilm, setSelectedFilm] = (0, _react.useState)(null);
+    if (selectedFilm) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmDetails.FilmDetails), {
+        film: selectedFilm
+    }, void 0, false, {
+        fileName: "src/components/main-view/main-view.jsx",
+        lineNumber: 38,
+        columnNumber: 13
+    }, undefined);
+    if (films.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Sorry, no films to display!"
+    }, void 0, false, {
+        fileName: "src/components/main-view/main-view.jsx",
+        lineNumber: 43,
+        columnNumber: 16
+    }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: films.map((film)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmCard.FilmCard), {
-                film: film
+                film: film,
+                onFilmClick: (newSelectedFilm)=>{
+                    setSelectedFilm(newSelectedFilm);
+                }
             }, films.id, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 36,
+                lineNumber: 49,
                 columnNumber: 11
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 34,
+        lineNumber: 47,
         columnNumber: 9
     }, undefined);
 };
-_s(MainView, "Atfp45NbYwNVGtB7qAHT1dYV62k=");
+_s(MainView, "PUy8ZA31St7KXOoX1/LHLq/e26s=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -27344,7 +27363,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react":"21dqq","react/jsx-dev-runtime":"iTorj","../film-card/film-card":"kWafU"}],"a2gzh":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react":"21dqq","react/jsx-dev-runtime":"iTorj","../film-card/film-card":"kWafU","../film-details/film-details":"cIiyE"}],"a2gzh":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27385,44 +27404,19 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "FilmCard", ()=>FilmCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const FilmCard = ({ film  })=>{
+const FilmCard = ({ film , onFilmClick  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    "Title: ",
-                    film.Title
-                ]
-            }, void 0, true, {
-                fileName: "src/components/film-card/film-card.jsx",
-                lineNumber: 4,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: [
-                    "Summary: ",
-                    film.Summary
-                ]
-            }, void 0, true, {
-                fileName: "src/components/film-card/film-card.jsx",
-                lineNumber: 5,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: film.Image
-                }, void 0, false, {
-                    fileName: "src/components/film-card/film-card.jsx",
-                    lineNumber: 7,
-                    columnNumber: 17
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/film-card/film-card.jsx",
-                lineNumber: 6,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
+        onClick: ()=>{
+            onFilmClick(film);
+        },
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+            src: film.Image
+        }, void 0, false, {
+            fileName: "src/components/film-card/film-card.jsx",
+            lineNumber: 8,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
         fileName: "src/components/film-card/film-card.jsx",
         lineNumber: 3,
         columnNumber: 9
@@ -27437,6 +27431,33 @@ $RefreshReg$(_c, "FilmCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}]},["01S1g","lrYXS","d8Dch"], "d8Dch", "parcelRequire94c2")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}],"cIiyE":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b7f3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b7f3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "FilmDetails", ()=>FilmDetails);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const FilmDetails = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {}, void 0, false, {
+        fileName: "src/components/film-details/film-details.jsx",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+_c = FilmDetails;
+var _c;
+$RefreshReg$(_c, "FilmDetails");
+
+  $parcel$ReactRefreshHelpers$b7f3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}]},["01S1g","lrYXS","d8Dch"], "d8Dch", "parcelRequire94c2")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

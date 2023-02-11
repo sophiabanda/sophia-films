@@ -1,11 +1,11 @@
-export const FilmCard = ({film}) => {
+export const FilmCard = ({film, onFilmClick}) => {
     return (
-        <div>
-            <div>Title: {film.Title}</div>
-            <div>Summary: {film.Summary}</div>
-            <div>
-                <img src={film.Image}></img>
-            </div>
+        <div
+        onClick={() => {
+            onFilmClick(film)
+        }}
+        >
+        <img src={film.Image}/>
         </div>
     )
 }
