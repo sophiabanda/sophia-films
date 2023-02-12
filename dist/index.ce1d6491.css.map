@@ -1,1 +1,1 @@
-{"mappings":"AAEA;;;;AAIA","sources":["src/index.scss"],"sourcesContent":["$color: teal;\n\n.soph-films {\n  color: $color;\n}\n\nbody {\n  background-color: rgb(70, 69, 69);\n}"],"names":[],"version":3,"file":"index.ce1d6491.css.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"AAEA;;;;AAIA","sources":["src/index.scss"],"sourcesContent":["$color: teal;\n\n.soph-films {\n  color: $color;\n}\n\nbody {\n  background-color: rgb(79, 79, 79);\n  color: white;\n}"],"names":[],"version":3,"file":"index.ce1d6491.css.map","sourceRoot":"/__parcel_source_root/"}
