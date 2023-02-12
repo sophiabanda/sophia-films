@@ -50,9 +50,9 @@ export const MainView = () => {
             Image:"https://via.placeholder.com/250x350",
             Director:{"$oid":"63d1a05f0a55cd1085fd7852"},
             Genres:[
-            {"$oid":"63d19c650a55cd1085fd7848"},
-            {"$oid":"63d19b900a55cd1085fd7846"},
-            {"$oid":"63d19b900a55cd1085fd7847"}
+                {"$oid":"63d19c650a55cd1085fd7848"},
+                {"$oid":"63d19b900a55cd1085fd7846"},
+                {"$oid":"63d19b900a55cd1085fd7847"}
             ]
         },
 
