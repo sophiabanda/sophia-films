@@ -3,9 +3,9 @@ export const FilmCard = ({film, onFilmClick}) => {
         <div
         onClick={() => {
             onFilmClick(film)
-        }}
-        >
-        <img src={film.Image}/>
+            }}
+            >
+            <img src={film.Image}></img>
         </div>
     )
 }
