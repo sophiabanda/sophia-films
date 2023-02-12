@@ -60,7 +60,7 @@ export const MainView = () => {
             id: 005,
             Title:"Mulholland Drive",
             Summary:"A dark-haired woman (Laura Elena Harring) is left amnesiac after a car crash. She wanders the streets of Los Angeles in a daze before taking refuge in an apartment. There she is discovered by Betty (Naomi Watts), a wholesome Midwestern blonde who has come to the City of Angels seeking fame as an actress. Together, the two attempt to solve the mystery of Rita's true identity. The story is set in a dream-like Los Angeles, spoilt neither by traffic jams nor smog.",
-            Image:"image.png",
+            Image:"https://via.placeholder.com/250x350",
             Director:
                 {"$oid":"63d1a05f0a55cd1085fd7851"},
             Genres:[
@@ -74,7 +74,7 @@ export const MainView = () => {
             id: 006,
             Title:"Casino",
             Summary:"In early-1970s Las Vegas, low-level mobster Sam \"Ace\" Rothstein (Robert De Niro) gets tapped by his bosses to head the Tangiers Casino. At first, he's a great success in the job, but over the years, problems with his loose-cannon enforcer Nicky Santoro (Joe Pesci), his ex-hustler wife Ginger (Sharon Stone), her con-artist ex Lester Diamond (James Woods) and a handful of corrupt politicians put Sam in ever-increasing danger. Martin Scorsese directs this adaptation of Nicholas Pileggi's book.",
-            Image:"image.png",
+            Image:"https://via.placeholder.com/250x350",
             Director:
                 {"$oid":"63d1a05f0a55cd1085fd7852"},
             Genres:[
