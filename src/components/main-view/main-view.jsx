@@ -11,12 +11,14 @@ export const MainView = () => {
         .then((data) => {
             console.log(data)
             const filmAPI = data.map((item) => {
-                const genres = item.Genres.map(genre => genre.Type)
+                const genres = item.Genres.map(genre => genre.Type);
+                const director = item.Director ? item.Director.Name : null;
                 return {
                     id: item._id,
                     title: item.Title,
                     summary: item.Summary,
-                    director: item.Director.Name,
+                    image: item.filmPosterImg,
+                    director: director,
                     genres: genres
                 }
             })

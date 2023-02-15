@@ -7,4 +7,31 @@ body {
   background-color: #4f4f4f;
 }
 
+#root {
+  grid-column: 5;
+  padding: 10px;
+  display: grid;
+}
+
+.grid-item {
+  padding: 20px;
+}
+
+.poster {
+  width: 150px;
+}
+
+.detail-poster {
+  width: 350px;
+}
+
+.title, .director, .genres, .summary {
+  padding: 10px;
+}
+
+.back-button {
+  width: 250px;
+  margin: 20px;
+}
+
 /*# sourceMappingURL=index.ce1d6491.css.map */
