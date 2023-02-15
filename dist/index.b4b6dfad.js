@@ -27288,70 +27288,37 @@ var _filmDetails = require("../film-details/film-details");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    const [films] = (0, _react.useState)([
-        {
-            id: 001,
-            Title: "Pet Sematary",
-            Summary: "Doctor Louis Creed (Dale Midkiff) moves his family to Maine, where he meets a friendly local named Jud Crandall (Fred Gwynne). After the Creeds' cat is accidentally killed, Crandall advises Louis to bury it in the ground near the old pet cemetery. The cat returns to life, its personality changed for the worse. When Louis' son, Gage (Miko Hughes), dies tragically, Louis decides to bury the boy's body in the same ground despite the warnings of Crandall and Louis' visions of a deceased patient.",
-            Image: "https://via.placeholder.com/250x350",
-            Director: {
-                "$oid": "63d1a1b20a55cd1085fd7859"
-            },
-            Genres: [
-                {
-                    "$oid": "63d19d240a55cd1085fd784c"
-                },
-                {
-                    "$oid": "63d1d398cf84b078575ab0fe"
-                }
-            ]
-        },
-        {
-            id: 002,
-            Title: "Magnolia",
-            Summary: "On one random day in the San Fernando Valley, a dying father, a young wife, a male caretaker, a famous lost son, a police officer in love, a boy genius, an ex-boy genius, a game show host and an estranged daughter will each become part of a dazzling multiplicity of plots, but one story.",
-            Image: "https://via.placeholder.com/250x350",
-            Director: {
-                "$oid": "63d1a05f0a55cd1085fd7851"
-            },
-            Genres: [
-                {
-                    "$oid": "63d19b900a55cd1085fd7847"
-                }
-            ]
-        },
-        {
-            id: 003,
-            Title: "2001: A Space Odyssey",
-            Summary: "An imposing black structure provides a connection between the past and the future in this enigmatic adaptation of a short story by revered sci-fi author Arthur C. Clarke. When Dr. Dave Bowman (Keir Dullea) and other astronauts are sent on a mysterious mission, their ship's computer system, HAL, begins to display increasingly strange behavior, leading up to a tense showdown between man and machine that results in a mind-bending trek through space and time.",
-            Image: "https://via.placeholder.com/250x350",
-            Genres: [
-                {
-                    "$oid": "63d19c650a55cd1085fd784a"
-                },
-                {
-                    "$oid": "63d19da60a55cd1085fd784f"
-                }
-            ],
-            Director: {
-                "$oid": "63d1a10b0a55cd1085fd7853"
-            }
-        }
-    ]);
+    const [films, setFilms] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        fetch(`https://sophia-films.herokuapp.com/films`).then((res)=>res.json()).then((data)=>{
+            console.log(data);
+            const filmAPI = data.map((item)=>{
+                const genres = item.Genres.map((genre)=>genre.Type);
+                return {
+                    id: item._id,
+                    title: item.Title,
+                    summary: item.Summary,
+                    director: item.Director.Name,
+                    genres: genres
+                };
+            });
+            setFilms(filmAPI);
+        });
+    }, []);
     const [selectedFilm, setSelectedFilm] = (0, _react.useState)(null);
     if (selectedFilm) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmDetails.FilmDetails), {
         film: selectedFilm,
         backButtonClick: ()=>setSelectedFilm(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 50,
+        lineNumber: 32,
         columnNumber: 13
     }, undefined);
     if (films.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "Sorry, no films to display!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 55,
+        lineNumber: 37,
         columnNumber: 16
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27362,16 +27329,16 @@ const MainView = ()=>{
                 }
             }, films.id, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 61,
+                lineNumber: 43,
                 columnNumber: 11
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 59,
+        lineNumber: 41,
         columnNumber: 9
     }, undefined);
 };
-_s(MainView, "YTowtCc9JlAplJtgCBcq4x7zzyA=");
+_s(MainView, "RplET/6a/KutptaM78AzuGDyhRY=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -27427,13 +27394,7 @@ const FilmCard = ({ film , onFilmClick  })=>{
         onClick: ()=>{
             onFilmClick(film);
         },
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-            src: film.Image
-        }, void 0, false, {
-            fileName: "src/components/film-card/film-card.jsx",
-            lineNumber: 8,
-            columnNumber: 13
-        }, undefined)
+        children: film.title
     }, void 0, false, {
         fileName: "src/components/film-card/film-card.jsx",
         lineNumber: 3,
@@ -27463,40 +27424,95 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const FilmDetails = ({ film , backButtonClick  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                children: "Title: "
-            }, void 0, false, {
-                fileName: "src/components/film-details/film-details.jsx",
-                lineNumber: 4,
-                columnNumber: 17
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                children: film.Title
-            }, void 0, false, {
-                fileName: "src/components/film-details/film-details.jsx",
-                lineNumber: 5,
-                columnNumber: 17
-            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: "Summary:"
+                        children: "Title: "
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
-                        lineNumber: 7,
+                        lineNumber: 5,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: film.Summary
+                        children: film.title
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
-                        lineNumber: 8,
+                        lineNumber: 6,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/film-details/film-details.jsx",
-                lineNumber: 6,
+                lineNumber: 4,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Director: "
+                    }, void 0, false, {
+                        fileName: "src/components/film-details/film-details.jsx",
+                        lineNumber: 9,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: film.Director
+                    }, void 0, false, {
+                        fileName: "src/components/film-details/film-details.jsx",
+                        lineNumber: 10,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/film-details/film-details.jsx",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Genres: "
+                    }, void 0, false, {
+                        fileName: "src/components/film-details/film-details.jsx",
+                        lineNumber: 13,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: film.Genres
+                    }, void 0, false, {
+                        fileName: "src/components/film-details/film-details.jsx",
+                        lineNumber: 14,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/film-details/film-details.jsx",
+                lineNumber: 12,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Summary: "
+                    }, void 0, false, {
+                        fileName: "src/components/film-details/film-details.jsx",
+                        lineNumber: 17,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: [
+                            " ",
+                            film.summary
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/film-details/film-details.jsx",
+                        lineNumber: 18,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/film-details/film-details.jsx",
+                lineNumber: 16,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27504,7 +27520,7 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                 children: "Back"
             }, void 0, false, {
                 fileName: "src/components/film-details/film-details.jsx",
-                lineNumber: 10,
+                lineNumber: 20,
                 columnNumber: 13
             }, undefined)
         ]
