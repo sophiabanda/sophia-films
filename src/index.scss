@@ -8,3 +8,39 @@ body {
   background-color: rgb(79, 79, 79);
   color: white;
 }
+
+#root {
+  padding: 10px;
+}
+
+.grid-container {
+  display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+}
+
+.grid-item {
+  padding: 20px;
+}
+
+.poster {
+  width: 150px;
+}
+
+.detail-poster {
+  width: 350px;
+}
+
+.title, .director, .genres, .summary {
+  padding: 10px;
+}
+
+.back-button {
+  margin: 20px;
+  width: 250px;
+}
+
