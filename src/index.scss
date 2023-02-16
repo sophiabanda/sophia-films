@@ -10,9 +10,17 @@ body {
 }
 
 #root {
-  display: grid;
-  grid-column: 5;
   padding: 10px;
+}
+
+.grid-container {
+  display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
 }
 
 .grid-item {
@@ -35,3 +43,4 @@ body {
   margin: 20px;
   width: 250px;
 }
+

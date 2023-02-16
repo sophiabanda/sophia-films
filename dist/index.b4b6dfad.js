@@ -27324,6 +27324,7 @@ const MainView = ()=>{
         columnNumber: 16
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "grid-container",
         children: films.map((film)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmCard.FilmCard), {
                 film: film,
                 onFilmClick: (newSelectedFilm)=>{
@@ -27395,16 +27396,22 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 const FilmCard = ({ film , onFilmClick  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "grid-item",
-        onClick: ()=>{
-            onFilmClick(film);
-        },
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-            src: film.image,
-            className: "poster"
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "grid-item",
+            onClick: ()=>{
+                onFilmClick(film);
+            },
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: film.image,
+                className: "poster"
+            }, void 0, false, {
+                fileName: "src/components/film-card/film-card.jsx",
+                lineNumber: 12,
+                columnNumber: 17
+            }, undefined)
         }, void 0, false, {
             fileName: "src/components/film-card/film-card.jsx",
-            lineNumber: 11,
+            lineNumber: 6,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
@@ -28213,18 +28220,21 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "title",
+                className: "summary",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: "Title: "
+                        children: "Summary: "
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
                         lineNumber: 9,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: film.title
-                    }, void 0, false, {
+                        children: [
+                            " ",
+                            film.summary
+                        ]
+                    }, void 0, true, {
                         fileName: "src/components/film-details/film-details.jsx",
                         lineNumber: 10,
                         columnNumber: 17
@@ -28236,17 +28246,17 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "director",
+                className: "title",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: "Director: "
+                        children: "Title: "
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
                         lineNumber: 13,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: film.director
+                        children: film.title
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
                         lineNumber: 14,
@@ -28259,17 +28269,17 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "genres",
+                className: "director",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: "Genres: "
+                        children: "Director: "
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
                         lineNumber: 17,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: film.genres.map((genre)=>genre.charAt(0).toUpperCase() + genre.slice(1)).join(", ")
+                        children: film.director
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
                         lineNumber: 18,
@@ -28282,21 +28292,18 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "summary",
+                className: "genres",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: "Summary: "
+                        children: "Genres: "
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
                         lineNumber: 21,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: [
-                            " ",
-                            film.summary
-                        ]
-                    }, void 0, true, {
+                        children: film.genres.map((genre)=>genre.charAt(0).toUpperCase() + genre.slice(1)).join(", ")
+                    }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
                         lineNumber: 22,
                         columnNumber: 17

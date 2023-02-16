@@ -2,13 +2,15 @@ import PropTypes from 'prop-types';
 
 export const FilmCard = ({film, onFilmClick}) => {
     return (
-        <div
-        className="grid-item"
-        onClick={() => {
-            onFilmClick(film)
-            }}
-            >
-            <img src={film.image} className="poster"></img>
+        <div>
+            <div
+            className='grid-item'
+            onClick={() => {
+                onFilmClick(film)
+                }}
+                >
+                <img src={film.image} className="poster"></img>
+            </div>
         </div>
     )
 }

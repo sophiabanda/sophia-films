@@ -40,7 +40,7 @@ export const MainView = () => {
     }
 
     return (
-        <div>
+        <div className='grid-container'>
           {films.map((film) => (
           <FilmCard
             key={films.id}

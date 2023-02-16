@@ -8,8 +8,13 @@ body {
 }
 
 #root {
-  grid-column: 5;
   padding: 10px;
+}
+
+.grid-container {
+  grid-template-columns: auto auto auto auto;
+  place-content: space-evenly;
+  place-items: center;
   display: grid;
 }
 

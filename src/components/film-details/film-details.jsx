@@ -5,6 +5,10 @@ export const FilmDetails = ({film, backButtonClick}) => {
             <div>
                 <img className="detail-poster" src={film.image}></img>
             </div>
+            <div className="summary">
+                <div>Summary: </div>
+                <div>{" "}{film.summary}</div>
+            </div>
             <div className="title">
                 <div>Title: </div>
                 <div>{film.title}</div>
@@ -16,10 +20,6 @@ export const FilmDetails = ({film, backButtonClick}) => {
             <div className="genres">
                 <div>Genres: </div>
                 <div>{film.genres.map(genre => genre.charAt(0).toUpperCase() + genre.slice(1)).join(", ")}</div>
-            </div>
-            <div className="summary">
-                <div>Summary: </div>
-                <div>{" "}{film.summary}</div>
             </div>
         </div>
 
