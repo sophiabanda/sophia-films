@@ -17,12 +17,18 @@ export const LoginView = ({onLoggedIn}) => {
         fetch('https://sophia-films.herokuapp.com/login', {
             method: 'POST',
             body: JSON.stringify(data)
-        }).then((response) => {
-            if(response.ok) {
-                onLoggedIn(username);
+        }).then((response) => response.json())
+          .then((data) => {
+            console.log(`Login response ${data}`)
+            if(data.user) {
+                localStorage.setItem('user', JSON.stringify(data.user));
+                localStorage.setItem('password', data.token);
+                onLoggedIn(data.user, data.token);
             } else {
-                alert('Login failed.')
+                alert('No such user.')
             }
+        }).catch((e) => {
+            alert('Something went wrong.')
         })
     }
 
