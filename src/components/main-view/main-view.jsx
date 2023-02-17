@@ -18,6 +18,7 @@ export const MainView = () => {
         }
 
         fetch(`https://sophia-films.herokuapp.com/films`, {
+            //where do we learn to set this properly? I see we can add them in postman
             headers: { Authorization: `Bearer ${token}` }
         })
         .then((res) => res.json())

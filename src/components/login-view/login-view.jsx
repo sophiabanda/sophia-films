@@ -21,6 +21,7 @@ export const LoginView = ({onLoggedIn}) => {
           .then((data) => {
             console.log(`Login response ${data}`)
             if(data.user) {
+                //this will set localstorage to continue user access while logged in
                 localStorage.setItem('user', JSON.stringify(data.user));
                 localStorage.setItem('password', data.token);
                 onLoggedIn(data.user, data.token);
