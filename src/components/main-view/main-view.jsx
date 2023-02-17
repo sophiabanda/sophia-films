@@ -1,9 +1,12 @@
 import { React, useState, useEffect } from 'react';
 import { FilmCard } from '../film-card/film-card';
 import { FilmDetails } from '../film-details/film-details';
+import { LoginView } from '../login-view/login-view';
 
 export const MainView = () => {
     const [films, setFilms] = useState([]);
+    const [selectedFilm, setSelectedFilm] = useState(null);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         fetch(`https://sophia-films.herokuapp.com/films`)
@@ -27,7 +30,9 @@ export const MainView = () => {
         })
     }, [])
 
-    const [selectedFilm, setSelectedFilm] = useState(null);
+    if(!user) {
+        return <LoginView onLoggedIn={(user) => setUser(user)} />
+    }
 
     if(selectedFilm) {
         return (
@@ -43,7 +48,7 @@ export const MainView = () => {
         <div className='grid-container'>
           {films.map((film) => (
           <FilmCard
-            key={films.id}
+            key={films._id}
             film={film}
             onFilmClick={(newSelectedFilm) => {
                 setSelectedFilm(newSelectedFilm);
