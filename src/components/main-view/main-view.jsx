@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { FilmCard } from '../film-card/film-card';
 import { FilmDetails } from '../film-details/film-details';
 import { LoginView } from '../login-view/login-view';
+import { SignupView } from '../sign-up-view/signup-view';
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -41,11 +42,15 @@ export const MainView = () => {
 
     if(!user) {
         return (
+          <>
             <LoginView
             onLoggedIn={(user, token) => {
                 setUser(user);
                 setToken(token);
             }} />
+            or
+            <SignupView />
+          </>
         )
     }
 
