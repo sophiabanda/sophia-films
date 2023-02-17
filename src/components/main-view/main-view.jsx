@@ -43,7 +43,7 @@ export const MainView = () => {
         <div className='grid-container'>
           {films.map((film) => (
           <FilmCard
-            key={films.id}
+            key={films._id}
             film={film}
             onFilmClick={(newSelectedFilm) => {
                 setSelectedFilm(newSelectedFilm);
