@@ -10,6 +10,7 @@ export const LoginView = ({onLoggedIn}) => {
         event.preventDefault();
 
         const data = {
+            //what are access and secret referring to here? our api? passport? jwt? what gateway is this?
             access: username,
             secret: password
         };
@@ -34,7 +35,7 @@ export const LoginView = ({onLoggedIn}) => {
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Username:
                 <input
                 type='text'
