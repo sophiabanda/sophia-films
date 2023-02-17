@@ -27402,7 +27402,7 @@ const FilmCard = ({ film , onFilmClick  })=>{
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 src: film.image,
                 className: "poster"
-            }, void 0, false, {
+            }, film._id, false, {
                 fileName: "src/components/film-card/film-card.jsx",
                 lineNumber: 10,
                 columnNumber: 17
