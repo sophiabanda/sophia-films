@@ -1,12 +1,26 @@
 import { React, useState, useEffect } from 'react';
 import { FilmCard } from '../film-card/film-card';
 import { FilmDetails } from '../film-details/film-details';
+import { LoginView } from '../login-view/login-view';
+import { SignupView } from '../sign-up-view/signup-view';
 
 export const MainView = () => {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    const storedToken = localStorage.getItem('token');
     const [films, setFilms] = useState([]);
+    const [selectedFilm, setSelectedFilm] = useState(null);
+    const [user, setUser] = useState(storedUser ? storedUser : null);
+    const [token, setToken] = useState(storedToken ? storedToken : null);
 
     useEffect(() => {
-        fetch(`https://sophia-films.herokuapp.com/films`)
+        if(!token) {
+            return;
+        }
+
+        fetch(`https://sophia-films.herokuapp.com/films`, {
+            //where do we learn to set this properly? I see we can add them in postman
+            headers: { Authorization: `Bearer ${token}` }
+        })
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
@@ -25,9 +39,21 @@ export const MainView = () => {
 
             setFilms(filmAPI)
         })
-    }, [])
+    }, [token])
 
-    const [selectedFilm, setSelectedFilm] = useState(null);
+    if(!user) {
+        return (
+          <>
+            <LoginView
+            onLoggedIn={(user, token) => {
+                setUser(user);
+                setToken(token);
+            }} />
+            or
+            <SignupView />
+          </>
+        )
+    }
 
     if(selectedFilm) {
         return (
@@ -40,14 +66,17 @@ export const MainView = () => {
     }
 
     return (
-        <div className='grid-container'>
-          {films.map((film) => (
-          <FilmCard
-            key={films._id}
-            film={film}
-            onFilmClick={(newSelectedFilm) => {
-                setSelectedFilm(newSelectedFilm);
-            }}/>))}
+        <div>
+            <button onClick={() => { setUser(null); setToken(null); localStorage.clear() }}>Logout</button>
+            <div className='grid-container'>
+            {films.map((film) => (
+            <FilmCard
+                key={films._id}
+                film={film}
+                onFilmClick={(newSelectedFilm) => {
+                    setSelectedFilm(newSelectedFilm);
+                }}/>))}
+            </div>
         </div>
     )
 }
