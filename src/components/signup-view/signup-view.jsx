@@ -6,9 +6,11 @@ export const SignUp = () => {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [birthday, setBirthday] = useState("");
+    //input will be a string, so state starts as empty string
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        //prevents default behavior of page reloading every time a field is submitted. default form behavior it to reload the entire page with submit.
 
         const data = {
             Name: username,
