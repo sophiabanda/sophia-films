@@ -9,14 +9,14 @@ export const LoginView = ({ onLoggedIn }) => {
         //this prevents the form from relaoding the entire page
 
     const data = {
-        access: username,
-        secret: password
+        Name: username,
+        Password: password
     }
 
     fetch('https://sophia-films.herokuapp.com/login', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application.json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
         }).then((response) => response.json())
