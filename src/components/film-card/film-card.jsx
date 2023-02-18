@@ -13,3 +13,4 @@ export const FilmCard = ({film, onFilmClick}) => {
     )
 }
 
+//use "off canvas" here?
