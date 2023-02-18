@@ -27153,7 +27153,7 @@ var _react = require("react");
 var _filmCard = require("../film-card/film-card");
 var _filmDetails = require("../film-details/film-details");
 var _loginView = require("../login-view/login-view");
-var _signupView = require("../sign-up-view/signup-view");
+var _signupView = require("../signup-view/signup-view");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
@@ -27275,7 +27275,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../film-card/film-card":"kWafU","../film-details/film-details":"cIiyE","../login-view/login-view":"9YtA0","../sign-up-view/signup-view":"dLPpz","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}],"kWafU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../film-card/film-card":"kWafU","../film-details/film-details":"cIiyE","../login-view/login-view":"9YtA0","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","../signup-view/signup-view":"4OGiN"}],"kWafU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$92ae = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27743,27 +27743,29 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}],"dLPpz":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0d48 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}],"4OGiN":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$73d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0d48.prelude(module);
+$parcel$ReactRefreshHelpers$73d1.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "SignupView", ()=>SignupView);
+parcelHelpers.export(exports, "SignUp", ()=>SignUp);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _s = $RefreshSig$();
-const SignupView = ()=>{
+const SignUp = ()=>{
     _s();
     const [username, setUsername] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
     const [email, setEmail] = (0, _react.useState)("");
     const [birthday, setBirthday] = (0, _react.useState)("");
-    const handleSubmit = (event)=>{
-        event.preventDefault();
+    //input will be a string, so state starts as empty string
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        //prevents default behavior of page reloading every time a field is submitted. default form behavior it to reload the entire page with submit.
         const data = {
             Name: username,
             Password: password,
@@ -27796,14 +27798,14 @@ const SignupView = ()=>{
                         required: true,
                         minLength: "3"
                     }, void 0, false, {
-                        fileName: "src/components/sign-up-view/signup-view.jsx",
-                        lineNumber: 39,
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 43,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/components/sign-up-view/signup-view.jsx",
-                lineNumber: 37,
+                fileName: "src/components/signup-view/signup-view.jsx",
+                lineNumber: 41,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -27813,16 +27815,17 @@ const SignupView = ()=>{
                         type: "password",
                         value: password,
                         onChange: (e)=>setPassword(e.target.value),
-                        required: true
+                        required: true,
+                        minLength: "8"
                     }, void 0, false, {
-                        fileName: "src/components/sign-up-view/signup-view.jsx",
-                        lineNumber: 49,
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 53,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/components/sign-up-view/signup-view.jsx",
-                lineNumber: 47,
+                fileName: "src/components/signup-view/signup-view.jsx",
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -27834,14 +27837,14 @@ const SignupView = ()=>{
                         onChange: (e)=>setEmail(e.target.value),
                         required: true
                     }, void 0, false, {
-                        fileName: "src/components/sign-up-view/signup-view.jsx",
-                        lineNumber: 58,
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 63,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/components/sign-up-view/signup-view.jsx",
-                lineNumber: 56,
+                fileName: "src/components/signup-view/signup-view.jsx",
+                lineNumber: 61,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -27852,37 +27855,37 @@ const SignupView = ()=>{
                         value: birthday,
                         onChange: (e)=>setBirthday(e.target.value)
                     }, void 0, false, {
-                        fileName: "src/components/sign-up-view/signup-view.jsx",
-                        lineNumber: 67,
+                        fileName: "src/components/signup-view/signup-view.jsx",
+                        lineNumber: 72,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/components/sign-up-view/signup-view.jsx",
-                lineNumber: 65,
+                fileName: "src/components/signup-view/signup-view.jsx",
+                lineNumber: 70,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 type: "submit",
                 children: "Submit"
             }, void 0, false, {
-                fileName: "src/components/sign-up-view/signup-view.jsx",
-                lineNumber: 73,
+                fileName: "src/components/signup-view/signup-view.jsx",
+                lineNumber: 78,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
-        fileName: "src/components/sign-up-view/signup-view.jsx",
-        lineNumber: 36,
+        fileName: "src/components/signup-view/signup-view.jsx",
+        lineNumber: 40,
         columnNumber: 5
     }, undefined);
 };
-_s(SignupView, "jsOQN3GC2XlBG9ITlzCdpyJOnso=");
-_c = SignupView;
+_s(SignUp, "tdA1KK8yaZidqYo0wscqshHt/KE=");
+_c = SignUp;
 var _c;
-$RefreshReg$(_c, "SignupView");
+$RefreshReg$(_c, "SignUp");
 
-  $parcel$ReactRefreshHelpers$0d48.postlude(module);
+  $parcel$ReactRefreshHelpers$73d1.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
