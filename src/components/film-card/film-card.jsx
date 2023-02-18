@@ -13,4 +13,12 @@ export const FilmCard = ({film, onFilmClick}) => {
     )
 }
 
+// export const FilmCard = ({film, onFilmClick}) => {
+//     return (
+//         <Card>
+//             <Card.Img variant='top' src={film.image}></Card.Img>
+//         </Card>
+//     )
+// }
+
 //use "off canvas" here?
