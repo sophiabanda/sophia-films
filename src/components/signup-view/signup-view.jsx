@@ -20,7 +20,7 @@ export const SignUp = () => {
         };
 
         fetch('https://sophia-films.herokuapp.com/users', {
-            method: "POST",
+            method: 'POST',
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
