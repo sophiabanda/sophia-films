@@ -20,7 +20,7 @@ export const SignUp = () => {
         };
 
         fetch('https://sophia-films.herokuapp.com/users', {
-            method: "POST",
+            method: 'POST',
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ export const SignUp = () => {
       <label>
         Username:
         <input
-          type="text"
+          type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -51,7 +51,7 @@ export const SignUp = () => {
       <label>
         Password:
         <input
-          type="password"
+          type='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -61,7 +61,7 @@ export const SignUp = () => {
       <label>
         Email:
         <input
-          type="email"
+          type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -70,12 +70,12 @@ export const SignUp = () => {
       <label>
         Birthday:
         <input
-          type="date"
+          type='date'
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
         />
       </label>
-      <button type="submit">Submit</button>
+      <button type='submit'>Submit</button>
     </form>
   );
 };

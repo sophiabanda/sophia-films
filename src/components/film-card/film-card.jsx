@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 export const FilmCard = ({film, onFilmClick}) => {
     return (
         <div>
@@ -9,15 +7,9 @@ export const FilmCard = ({film, onFilmClick}) => {
                 onFilmClick(film)
                 }}
                 >
-                <img src={film.image} className="poster"></img>
+                <img key={film._id} src={film.image} className="poster"></img>
             </div>
         </div>
     )
 }
 
-FilmCard.propTypes = {
-    book: PropTypes.shape = ({
-        title: PropTypes.string
-    }).isRequired,
-    onFilmClick: PropTypes.func.isRequired
-};

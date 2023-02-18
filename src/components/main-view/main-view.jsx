@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { FilmCard } from '../film-card/film-card';
 import { FilmDetails } from '../film-details/film-details';
 import { LoginView } from '../login-view/login-view';
-import { SignUp } from '../signup-view/signup-view';
+import { SignUp } from '../sign-up-view/signup-view';
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -17,14 +17,12 @@ export const MainView = () => {
     useEffect(() => {
         if(!token) {
             return;
-            //won't run or reload the fetch if no token present
         }
 
         fetch(`https://sophia-films.herokuapp.com/films`, {
-            //sets the auth type to bearer token for http request
+            //where do we learn to set this properly? I see we can add them in postman
             headers: { Authorization: `Bearer ${token}` }
-            }
-        )
+        })
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
@@ -75,7 +73,7 @@ export const MainView = () => {
             <div className='grid-container'>
             {films.map((film) => (
             <FilmCard
-                key={films.id}
+                key={films._id}
                 film={film}
                 onFilmClick={(newSelectedFilm) => {
                     setSelectedFilm(newSelectedFilm);
