@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 export const SignUp = () => {
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [birthday, setBirthday] = useState("");
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [birthday, setBirthday] = useState('');
     //input will be a string, so state starts as empty string
 
     const handleSubmit = (e) => {
@@ -23,7 +23,7 @@ export const SignUp = () => {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json'
             }
             //tells the server that the data being sent in the request is json so that the server can properly parse the data
         }).then((response) => {
