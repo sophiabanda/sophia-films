@@ -19,6 +19,9 @@ export const LoginView = ({onLoggedIn}) => {
 
         fetch('https://sophia-films.herokuapp.com/login', {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(data)
         }).then((response) => response.json())
           .then((data) => {
@@ -26,7 +29,7 @@ export const LoginView = ({onLoggedIn}) => {
             if(data.user) {
                 //this will set localstorage to continue user access while logged in
                 localStorage.setItem('user', JSON.stringify(data.user));
-                localStorage.setItem('password', data.token);
+                localStorage.setItem('token', data.token);
                 onLoggedIn(data.user, data.token);
             } else {
                 alert('No such user.')
