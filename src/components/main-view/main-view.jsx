@@ -7,17 +7,21 @@ import { SignUp } from '../signup-view/signup-view';
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
     const storedToken = localStorage.getItem('token');
+    //stores user token locally to keep user logged in after sign-in
     const [films, setFilms] = useState([]);
     const [selectedFilm, setSelectedFilm] = useState(null);
     const [user, setUser] = useState(storedUser ? storedUser : null);
     const [token, setToken] = useState(storedToken ? storedToken : null);
+    //checks for user and token
 
     useEffect(() => {
         if(!token) {
             return;
+            //won't run or reload the fetch if no token present
         }
 
         fetch(`https://sophia-films.herokuapp.com/films`, {
+            //sets the auth type to bearer token for http request
             headers: { Authorization: `Bearer ${token}` }
             }
         )
@@ -40,6 +44,7 @@ export const MainView = () => {
             setFilms(filmAPI)
         })
     }, [token])
+    //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
 
     if (!user) {
         return (
