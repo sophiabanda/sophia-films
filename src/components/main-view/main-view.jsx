@@ -2,15 +2,17 @@ import { React, useState, useEffect } from 'react';
 import { FilmCard } from '../film-card/film-card';
 import { FilmDetails } from '../film-details/film-details';
 import { LoginView } from '../login-view/login-view';
-import { SignupView } from '../sign-up-view/signup-view';
+import { SignUp } from '../sign-up-view/signup-view';
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
     const storedToken = localStorage.getItem('token');
+    //stores user token locally to keep user logged in after sign-in
     const [films, setFilms] = useState([]);
     const [selectedFilm, setSelectedFilm] = useState(null);
     const [user, setUser] = useState(storedUser ? storedUser : null);
     const [token, setToken] = useState(storedToken ? storedToken : null);
+    //checks for user and token
 
     useEffect(() => {
         if(!token) {
@@ -40,20 +42,20 @@ export const MainView = () => {
             setFilms(filmAPI)
         })
     }, [token])
+    //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
 
-    if(!user) {
+    if (!user) {
         return (
           <>
-            <LoginView
-            onLoggedIn={(user, token) => {
-                setUser(user);
-                setToken(token);
+            <LoginView onLoggedIn={(user, token) => {
+              setUser(user);
+              setToken(token);
             }} />
             or
-            <SignupView />
+            <SignUp />
           </>
-        )
-    }
+        );
+      }
 
     if(selectedFilm) {
         return (
