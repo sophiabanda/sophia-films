@@ -25,6 +25,7 @@ export const SignUp = () => {
             headers: {
                 "Content-Type": "application/json"
             }
+            //tells the server that the data being sent in the request is json so that the server can properly parse the data
         }).then((response) => {
             if(response.ok) {
                 alert('Signup successful!');
@@ -44,7 +45,7 @@ export const SignUp = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          minLength="3"
+          minLength='3'
         />
       </label>
       <label>
@@ -54,6 +55,7 @@ export const SignUp = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          minLength='8'
         />
       </label>
       <label>
