@@ -1,7 +1,9 @@
+import './film-details.scss'
+
 export const FilmDetails = ({film, backButtonClick}) => {
     return (
         <div>
-            <button className="back-button" onClick={backButtonClick}>Back</button>
+            <button className="back-button" style={{cursor: 'pointer'}} onClick={backButtonClick}>Back</button>
             <div>
                 <img className="detail-poster" src={film.image}></img>
             </div>

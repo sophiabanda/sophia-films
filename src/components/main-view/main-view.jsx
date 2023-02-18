@@ -69,7 +69,7 @@ export const MainView = () => {
 
     return (
         <div>
-            <button onClick={() => { setUser(null); setToken(null); localStorage.clear() }}>Logout</button>
+            <button style={{cursor: 'pointer'}} onClick={() => { setUser(null); setToken(null); localStorage.clear() }}>Logout</button>
             <div className='grid-container'>
             {films.map((film) => (
             <FilmCard
