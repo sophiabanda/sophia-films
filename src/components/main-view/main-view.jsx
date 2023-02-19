@@ -3,6 +3,7 @@ import { FilmCard } from '../film-card/film-card';
 import { FilmDetails } from '../film-details/film-details';
 import { LoginView } from '../login-view/login-view';
 import { SignUp } from '../signup-view/signup-view';
+import { Button } from 'react-bootstrap';
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -69,7 +70,7 @@ export const MainView = () => {
 
     return (
         <div>
-            <button style={{cursor: 'pointer'}} onClick={() => { setUser(null); setToken(null); localStorage.clear() }}>Logout</button>
+            <Button style={{cursor: 'pointer'}} onClick={() => { setUser(null); setToken(null); localStorage.clear() }}>Logout</Button>
             <div className='grid-container'>
             {films.map((film) => (
             <FilmCard
