@@ -2932,9 +2932,6 @@ var _bootstrapMinCss = require("bootstrap/dist/css/bootstrap.min.css");
 var _indexScss = require("./index.scss");
 const FilmApp = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
-        style: {
-            border: "1px solid red"
-        },
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
             fileName: "src/index.jsx",
             lineNumber: 11,
@@ -27205,6 +27202,10 @@ const MainView = ()=>{
     ]);
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+        style: {
+            width: "100%"
+        },
+        className: "justify-content-md-center",
         children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
@@ -27292,10 +27293,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactBootstrap = require("react-bootstrap");
 const FilmCard = ({ film , onFilmClick  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-        styel: {
-            border: "1px solid black"
-        },
-        md: 2,
+        sm: 3,
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
             onClick: ()=>{
                 onFilmClick(film);
@@ -41072,9 +41070,14 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "FilmDetails", ()=>FilmDetails);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactBootstrap = require("react-bootstrap");
 var _filmDetailsScss = require("./film-details.scss");
 const FilmDetails = ({ film , backButtonClick  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+        md: 9,
+        style: {
+            border: "2px solid red"
+        },
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: "back-button",
@@ -41085,7 +41088,7 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                 children: "Back"
             }, void 0, false, {
                 fileName: "src/components/film-details/film-details.jsx",
-                lineNumber: 6,
+                lineNumber: 8,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41094,12 +41097,12 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                     src: film.image
                 }, void 0, false, {
                     fileName: "src/components/film-details/film-details.jsx",
-                    lineNumber: 8,
+                    lineNumber: 10,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/film-details/film-details.jsx",
-                lineNumber: 7,
+                lineNumber: 9,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41109,7 +41112,7 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                         children: "Summary: "
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
-                        lineNumber: 11,
+                        lineNumber: 13,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41119,13 +41122,13 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/film-details/film-details.jsx",
-                        lineNumber: 12,
+                        lineNumber: 14,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/film-details/film-details.jsx",
-                lineNumber: 10,
+                lineNumber: 12,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41135,20 +41138,20 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                         children: "Title: "
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
-                        lineNumber: 15,
+                        lineNumber: 17,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: film.title
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
-                        lineNumber: 16,
+                        lineNumber: 18,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/film-details/film-details.jsx",
-                lineNumber: 14,
+                lineNumber: 16,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41158,20 +41161,20 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                         children: "Director: "
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
-                        lineNumber: 19,
+                        lineNumber: 21,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: film.director
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
-                        lineNumber: 20,
+                        lineNumber: 22,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/film-details/film-details.jsx",
-                lineNumber: 18,
+                lineNumber: 20,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41181,26 +41184,26 @@ const FilmDetails = ({ film , backButtonClick  })=>{
                         children: "Genres: "
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
-                        lineNumber: 23,
+                        lineNumber: 25,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: film.genres.map((genre)=>genre.charAt(0).toUpperCase() + genre.slice(1)).join(", ")
                     }, void 0, false, {
                         fileName: "src/components/film-details/film-details.jsx",
-                        lineNumber: 24,
+                        lineNumber: 26,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/film-details/film-details.jsx",
-                lineNumber: 22,
+                lineNumber: 24,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/film-details/film-details.jsx",
-        lineNumber: 5,
+        lineNumber: 7,
         columnNumber: 9
     }, undefined);
 };
@@ -41213,7 +41216,7 @@ $RefreshReg$(_c, "FilmDetails");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","./film-details.scss":"14fbe"}],"14fbe":[function() {},{}],"9YtA0":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","./film-details.scss":"14fbe","react-bootstrap":"3AD9A"}],"14fbe":[function() {},{}],"9YtA0":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

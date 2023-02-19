@@ -1,8 +1,10 @@
+import { Col } from 'react-bootstrap';
+
 import './film-details.scss'
 
 export const FilmDetails = ({film, backButtonClick}) => {
     return (
-        <div>
+        <Col md={9} style={{border: '2px solid red'}}>
             <button className="back-button" style={{cursor: 'pointer'}} onClick={backButtonClick}>Back</button>
             <div>
                 <img className="detail-poster" src={film.image}></img>
@@ -23,7 +25,7 @@ export const FilmDetails = ({film, backButtonClick}) => {
                 <div>Genres: </div>
                 <div>{film.genres.map(genre => genre.charAt(0).toUpperCase() + genre.slice(1)).join(", ")}</div>
             </div>
-        </div>
+        </Col>
 
         //.slice returns string, and .join cannot be used on string. Must be called outside of the .map function.
     )

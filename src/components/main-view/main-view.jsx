@@ -46,7 +46,7 @@ export const MainView = () => {
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
 
     return (
-        <Row>
+        <Row style={{width: '100%'}} className='justify-content-md-center' >
             {!user ? (
                 <>
                   <LoginView onLoggedIn={(user) => setUser(user)} /> or <SignUp />
