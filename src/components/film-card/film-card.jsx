@@ -1,15 +1,14 @@
+import { Card } from 'react-bootstrap';
+
 export const FilmCard = ({film, onFilmClick}) => {
     return (
-        <div>
-            <div
-            className='grid-item'
-            onClick={() => {
-                onFilmClick(film)
-                }}
-                >
-                <img key={film._id} src={film.image} className="poster"></img>
-            </div>
-        </div>
+        <Card onClick={() => {onFilmClick(film)}}>
+            <Card.Body>
+                <Card.Img key={film._id} src={film.image} variant='top' className='poster'></Card.Img>
+            </Card.Body>
+        </Card>
     )
 }
+
+
 
