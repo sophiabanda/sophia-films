@@ -49,44 +49,38 @@ export const SignUp = () => {
           minLength='3'
         ></Form.Control>
         </Form.Group>
+        <Form.Group controlId='formPassword'>
+          <Form.Label>Password: </Form.Label>
+          <Form.Control
+          type='password'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          minLength='8'
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group controlId='formEmail'>
+          <Form.Label>Email: </Form.Label>
+          <Form.Control
+          type='email'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          requireds
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group controlId='formBirthday'>
+          <Form.Label>Birthday: </Form.Label>
+          <Form.Control
+          type='date'
+          value={birthday}
+          onChange={(e) => setBirthday(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+        <Button variant='primary' type='submit'>Submit</Button>
       </Form>
-    // <form onSubmit={handleSubmit}>
-    //   <label>
-    //     Username:
-    //     <input
-
-    //     />
-    //   </label>
-    //   <label>
-    //     Password:
-    //     <input
-    //       type='password'
-    //       value={password}
-    //       onChange={(e) => setPassword(e.target.value)}
-    //       required
-    //       minLength='8'
-    //     />
-    //   </label>
-    //   <label>
-    //     Email:
-    //     <input
-    //       type='email'
-    //       value={email}
-    //       onChange={(e) => setEmail(e.target.value)}
-    //       required
-    //     />
-    //   </label>
-    //   <label>
-    //     Birthday:
-    //     <input
-    //       type='date'
-    //       value={birthday}
-    //       onChange={(e) => setBirthday(e.target.value)}
-    //     />
-    //   </label>
-    //   <button type='submit'>Submit</button>
-    // </form>
   );
 };
+
+//How can I set the password field to 'show password' during creation and input?
 
 
