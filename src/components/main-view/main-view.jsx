@@ -3,7 +3,7 @@ import { FilmCard } from '../film-card/film-card';
 import { FilmDetails } from '../film-details/film-details';
 import { LoginView } from '../login-view/login-view';
 import { SignUp } from '../signup-view/signup-view';
-import { Button } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -42,44 +42,50 @@ export const MainView = () => {
 
             setFilms(filmAPI)
         })
-    }, [token])
+    }, [token]);
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
 
-    if (!user) {
-        return (
-          <>
-            <LoginView onLoggedIn={(user, token) => {
-              setUser(user);
-              setToken(token);
-            }} />
-            or
-            <SignUp />
-          </>
-        );
-      }
-
-    if(selectedFilm) {
-        return (
-            <FilmDetails film={selectedFilm} backButtonClick={() => setSelectedFilm(null)}/>
-        )
-    }
-
-    if(films.length === 0) {
-        return <div>Sorry, no films to display!</div>
-    }
-
     return (
-        <div>
-            <Button style={{cursor: 'pointer'}} onClick={() => { setUser(null); setToken(null); localStorage.clear() }}>Logout</Button>
-            <div className='grid-container'>
-            {films.map((film) => (
-            <FilmCard
-                key={films._id}
-                film={film}
-                onFilmClick={(newSelectedFilm) => {
-                    setSelectedFilm(newSelectedFilm);
-                }}/>))}
-            </div>
-        </div>
+        <Row>
+            {!user ? (
+                <>
+                 <LoginView onLoggedIn={(user) => setUser(user)} /> or <SignUp />
+                </>
+            ) : selectedFilm ? (
+                <FilmDetails film={selectedFilm} backButtonClick={() => setSelectedFilm(null)}/>
+            ) : films.length === 0 ? (
+                <div>Sorry, no films to display!</div>
+            ) : (
+                <>
+                <Button style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}} />
+                    {films.map((film) => (
+                        <FilmCard
+                        key={films._id}
+                        film={film}
+                        onFilmClick={(newSelectedFilm) => {setSelectedFilm(newSelectedFilm)}}
+                        ></FilmCard>
+                        ))}
+                </>
+            )
+            }
+        </Row>
     )
+
+
+
+    // // return (
+    // //     <Row style={{border: '1px solid yellow'}}>
+    //         <Button style={{cursor: 'pointer'}} onClick={() => { setUser(null); setToken(null); localStorage.clear() }}>Logout</Button>
+    //         <div className='grid-container'>
+    //         {films.map((film) => (
+    //         <FilmCard
+    //             key={films._id}
+    //             film={film}
+    //             onFilmClick={(newSelectedFilm) => {
+    //                 setSelectedFilm(newSelectedFilm);
+    //             }}/>))}
+    //         </div>
+    // //     </Row>
+    // // )
+    // <Button style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}></Button>
 }
