@@ -49,15 +49,15 @@ export const MainView = () => {
         <Row>
             {!user ? (
                 <>
-                 <LoginView onLoggedIn={(user) => setUser(user)} /> or <SignUp />
+                  <LoginView onLoggedIn={(user) => setUser(user)} /> or <SignUp />
                 </>
-            ) : selectedFilm ? (
-                <FilmDetails film={selectedFilm} backButtonClick={() => setSelectedFilm(null)}/>
-            ) : films.length === 0 ? (
-                <div>Sorry, no films to display!</div>
-            ) : (
+                    ) : selectedFilm ? (
+                        <FilmDetails film={selectedFilm} backButtonClick={() => setSelectedFilm(null)}/>
+                    ) : films.length === 0 ? (
+                        <div>Sorry, no films to display!</div>
+                    ) : (
                 <>
-                <Button style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}} />
+                  <Button style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}} />
                     {films.map((film) => (
                         <FilmCard
                         key={films._id}
@@ -67,25 +67,7 @@ export const MainView = () => {
                         ))}
                 </>
             )
-            }
+        }
         </Row>
     )
-
-
-
-    // // return (
-    // //     <Row style={{border: '1px solid yellow'}}>
-    //         <Button style={{cursor: 'pointer'}} onClick={() => { setUser(null); setToken(null); localStorage.clear() }}>Logout</Button>
-    //         <div className='grid-container'>
-    //         {films.map((film) => (
-    //         <FilmCard
-    //             key={films._id}
-    //             film={film}
-    //             onFilmClick={(newSelectedFilm) => {
-    //                 setSelectedFilm(newSelectedFilm);
-    //             }}/>))}
-    //         </div>
-    // //     </Row>
-    // // )
-    // <Button style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}></Button>
 }

@@ -27212,13 +27212,13 @@ const MainView = ()=>{
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 52,
-                    columnNumber: 18
+                    columnNumber: 19
                 }, undefined),
                 " or ",
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignUp), {}, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 52,
-                    columnNumber: 72
+                    columnNumber: 73
                 }, undefined)
             ]
         }, void 0, true) : selectedFilm ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmDetails.FilmDetails), {
@@ -27227,13 +27227,13 @@ const MainView = ()=>{
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 55,
-            columnNumber: 17
+            columnNumber: 25
         }, undefined) : films.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: "Sorry, no films to display!"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 57,
-            columnNumber: 17
+            columnNumber: 25
         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -27248,7 +27248,7 @@ const MainView = ()=>{
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 60,
-                    columnNumber: 17
+                    columnNumber: 19
                 }, undefined),
                 films.map((film)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmCard.FilmCard), {
                         film: film,
@@ -27267,21 +27267,6 @@ const MainView = ()=>{
         lineNumber: 49,
         columnNumber: 9
     }, undefined);
-// // return (
-// //     <Row style={{border: '1px solid yellow'}}>
-//         <Button style={{cursor: 'pointer'}} onClick={() => { setUser(null); setToken(null); localStorage.clear() }}>Logout</Button>
-//         <div className='grid-container'>
-//         {films.map((film) => (
-//         <FilmCard
-//             key={films._id}
-//             film={film}
-//             onFilmClick={(newSelectedFilm) => {
-//                 setSelectedFilm(newSelectedFilm);
-//             }}/>))}
-//         </div>
-// //     </Row>
-// // )
-// <Button style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}></Button>
 };
 _s(MainView, "cyVLFkHuUdOW83KCwohxGQYJsis=");
 _c = MainView;
