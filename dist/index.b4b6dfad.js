@@ -27198,12 +27198,15 @@ const MainView = ()=>{
                     genres: genres
                 };
             });
-            setFilms(filmAPI);
+            const fetchedFilms = filmAPI.sort((a, b)=>a.title.localeCompare(b.title));
+            setFilms(fetchedFilms);
         });
     }, [
         token
     ]);
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
+    // films.sort((a, b) => a.title.localeCompare(b.title));
+    //first sorts the returned array to return alphabetical order using localcompare to decipher sort order based on the titles returned. .map returns the new aphabeitcal array.
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
         style: {
             border: "dashed 3px chartreuse"
@@ -27214,13 +27217,13 @@ const MainView = ()=>{
                     onLoggedIn: (user)=>setUser(user)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 52,
+                    lineNumber: 57,
                     columnNumber: 19
                 }, undefined),
                 " or ",
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignUp), {}, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 52,
+                    lineNumber: 57,
                     columnNumber: 73
                 }, undefined)
             ]
@@ -27229,13 +27232,13 @@ const MainView = ()=>{
             backButtonClick: ()=>setSelectedFilm(null)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 55,
+            lineNumber: 60,
             columnNumber: 25
         }, undefined) : films.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: "Sorry, no films to display!"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 57,
+            lineNumber: 62,
             columnNumber: 25
         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
@@ -27251,7 +27254,7 @@ const MainView = ()=>{
                     children: "Logout"
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 60,
+                    lineNumber: 65,
                     columnNumber: 19
                 }, undefined),
                 films.map((film)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmCard.FilmCard), {
@@ -27261,14 +27264,14 @@ const MainView = ()=>{
                         }
                     }, films._id, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 62,
+                        lineNumber: 67,
                         columnNumber: 25
                     }, undefined))
             ]
         }, void 0, true)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 49,
+        lineNumber: 54,
         columnNumber: 9
     }, undefined);
 };

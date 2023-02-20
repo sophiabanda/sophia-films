@@ -40,10 +40,15 @@ export const MainView = () => {
                 }
             })
 
-            setFilms(filmAPI)
+            const fetchedFilms = filmAPI.sort((a, b) => a.title.localeCompare(b.title))
+            setFilms(fetchedFilms);
+
         })
     }, [token]);
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
+
+    // films.sort((a, b) => a.title.localeCompare(b.title));
+    //first sorts the returned array to return alphabetical order using localcompare to decipher sort order based on the titles returned. .map returns the new aphabeitcal array.
 
     return (
         <Row style={{border: 'dashed 3px chartreuse'}} >
