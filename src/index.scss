@@ -1,12 +1,8 @@
-$main-bg: rgb(59, 57, 57);
-
+$body-bg: rgb(59, 57, 57);
+$primary: rgb(66, 66, 245);
+$body: white;
 
 @import '~bootstrap/scss/bootstrap.scss';
-
-body {
-  background-color: $main-bg;
-  color: white;
-}
 
 .detail-poster {
   width: 100%;
