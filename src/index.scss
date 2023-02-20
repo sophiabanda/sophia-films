@@ -1,5 +1,10 @@
+$main-bg: rgb(59, 57, 57);
+
+
+@import '~bootstrap/scss/bootstrap.scss';
+
 body {
-  background-color: rgb(59, 57, 57);
+  background-color: $main-bg;
   color: white;
 }
 
@@ -18,7 +23,6 @@ body {
 
 #root {
   padding: 10px;
-  border: solid 1px red
 }
 
 // .grid-container {

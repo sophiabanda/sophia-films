@@ -2928,13 +2928,11 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _client = require("react-dom/client");
 var _mainView = require("./components/main-view/main-view");
 var _reactBootstrap = require("react-bootstrap");
-var _bootstrapMinCss = require("bootstrap/dist/css/bootstrap.min.css");
+// import 'bootstrap/dist/css/bootstrap.min.css';
 var _indexScss = require("./index.scss");
 const FilmApp = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
-        style: {
-            border: "solid 2px blue"
-        },
+        fluid: true,
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
             fileName: "src/index.jsx",
             lineNumber: 11,
@@ -2964,7 +2962,7 @@ $RefreshReg$(_c, "FilmApp");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react-bootstrap":"3AD9A","bootstrap/dist/css/bootstrap.min.css":"i5LP7"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react-bootstrap":"3AD9A"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("2ca8c1302a9703f3");
 
@@ -27200,17 +27198,14 @@ const MainView = ()=>{
             });
             const fetchedFilms = filmAPI.sort((a, b)=>a.title.localeCompare(b.title));
             setFilms(fetchedFilms);
+        //With fetchedFilms we're requesting the the initially returned array be sorted alphabetically with sort & localCompare
+        //Doing this before they're set as state ensures faster performance by ensuring we do not sort with every re-render in return.
         });
     }, [
         token
     ]);
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
-    // films.sort((a, b) => a.title.localeCompare(b.title));
-    //first sorts the returned array to return alphabetical order using localcompare to decipher sort order based on the titles returned. .map returns the new aphabeitcal array.
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        style: {
-            border: "dashed 3px chartreuse"
-        },
         children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
@@ -27243,8 +27238,10 @@ const MainView = ()=>{
         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                    className: "logout-button",
                     style: {
-                        cursor: "pointer"
+                        cursor: "pointer",
+                        margin: "5px"
                     },
                     onClick: ()=>{
                         setUser(null);
@@ -27274,7 +27271,8 @@ const MainView = ()=>{
         lineNumber: 54,
         columnNumber: 9
     }, undefined);
-};
+} //Button's length is exceeding the size of the row container.
+;
 _s(MainView, "cyVLFkHuUdOW83KCwohxGQYJsis=");
 _c = MainView;
 var _c;
@@ -41083,9 +41081,6 @@ var _filmDetailsScss = require("./film-details.scss");
 const FilmDetails = ({ film , backButtonClick  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
         md: 9,
-        style: {
-            border: "2px solid red"
-        },
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                 variant: "danger",
@@ -41530,6 +41525,6 @@ $RefreshReg$(_c, "SignUp");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react-bootstrap":"3AD9A"}],"lJZlQ":[function() {},{}],"i5LP7":[function() {},{}]},["01S1g","lrYXS","d8Dch"], "d8Dch", "parcelRequire94c2")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react-bootstrap":"3AD9A"}],"lJZlQ":[function() {},{}]},["01S1g","lrYXS","d8Dch"], "d8Dch", "parcelRequire94c2")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

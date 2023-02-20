@@ -2,12 +2,12 @@ import { createRoot } from 'react-dom/client';
 import { MainView } from './components/main-view/main-view';
 import { Container } from 'react-bootstrap'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.scss";
 
 const FilmApp = () => {
   return (
-    <Container style={{border: 'solid 2px blue'}}>
+    <Container fluid>
       <MainView />
     </Container>
   );

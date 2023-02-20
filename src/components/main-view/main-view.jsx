@@ -51,7 +51,7 @@ export const MainView = () => {
 
 
     return (
-        <Row style={{border: 'dashed 3px chartreuse'}} >
+        <Row>
             {!user ? (
                 <>
                   <LoginView onLoggedIn={(user) => setUser(user)} /> or <SignUp />
@@ -62,7 +62,7 @@ export const MainView = () => {
                         <div>Sorry, no films to display!</div>
                     ) : (
                 <>
-                  <Button style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}>Logout</Button>
+                  <Button className='logout-button' style={{cursor: 'pointer', margin: '5px'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}>Logout</Button>
                     {films.map((film) => (
                         <FilmCard
                         key={films._id}
@@ -76,3 +76,5 @@ export const MainView = () => {
         </Row>
     )
 }
+
+//Button's length is exceeding the size of the row container.

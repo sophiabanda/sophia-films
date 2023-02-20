@@ -4,7 +4,7 @@ import './film-details.scss'
 
 export const FilmDetails = ({film, backButtonClick}) => {
     return (
-        <Col md={9} style={{border: '2px solid red'}}>
+        <Col md={9}>
             <Button variant='danger' style={{cursor: 'pointer', width: '350px'}} onClick={backButtonClick}>Back</Button>
             <div>
                 <img className="detail-poster" src={film.image}></img>
