@@ -42,13 +42,13 @@ export const MainView = () => {
 
             const fetchedFilms = filmAPI.sort((a, b) => a.title.localeCompare(b.title))
             setFilms(fetchedFilms);
+            //With fetchedFilms we're requesting the the initially returned array be sorted alphabetically with sort & localCompare
+            //Doing this before they're set as state ensures faster performance by ensuring we do not sort with every re-render in return.
 
         })
     }, [token]);
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
 
-    // films.sort((a, b) => a.title.localeCompare(b.title));
-    //first sorts the returned array to return alphabetical order using localcompare to decipher sort order based on the titles returned. .map returns the new aphabeitcal array.
 
     return (
         <Row style={{border: 'dashed 3px chartreuse'}} >
