@@ -62,7 +62,7 @@ export const MainView = () => {
                         <div>Sorry, no films to display!</div>
                     ) : (
                 <>
-                  <Button className='logout-button' style={{cursor: 'pointer', margin: '5px'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}>Logout</Button>
+                  <Button className='logout-button' style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}>Logout</Button>
                     {films.map((film) => (
                         <FilmCard
                         key={films._id}

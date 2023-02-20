@@ -27240,8 +27240,7 @@ const MainView = ()=>{
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                     className: "logout-button",
                     style: {
-                        cursor: "pointer",
-                        margin: "5px"
+                        cursor: "pointer"
                     },
                     onClick: ()=>{
                         setUser(null);

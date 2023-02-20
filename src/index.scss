@@ -1,8 +1,16 @@
 $body-bg: rgb(59, 57, 57);
 $primary: rgb(66, 66, 245);
-$body: white;
 
 @import '~bootstrap/scss/bootstrap.scss';
+
+body {
+  color: white;
+}
+
+.logout-button {
+  margin: 20px;
+  width: -webkit-fill-available;
+}
 
 .detail-poster {
   width: 100%;
@@ -10,31 +18,14 @@ $body: white;
 
 }
 
-
 .back-button {
   margin: 20px;
   width: 250px;
 }
 
-
 #root {
   padding: 10px;
 }
-
-// .grid-container {
-//   display: grid;
-//   // grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
-//   grid-template-columns: auto auto auto auto;
-//   justify-content: space-evenly;
-//   justify-items: center;
-//   align-content: space-evenly;
-//   align-items: center;
-// }
-
-// .grid-item {
-//   padding: 20px;
-// }
-
 
 .title, .director, .genres, .summary {
   padding: 10px;
