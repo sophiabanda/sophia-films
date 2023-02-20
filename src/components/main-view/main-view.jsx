@@ -46,7 +46,7 @@ export const MainView = () => {
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
 
     return (
-        <Row style={{width: '100%'}} className='justify-content-md-center' >
+        <Row style={{border: 'dashed 3px chartreuse'}} >
             {!user ? (
                 <>
                   <LoginView onLoggedIn={(user) => setUser(user)} /> or <SignUp />
@@ -57,7 +57,7 @@ export const MainView = () => {
                         <div>Sorry, no films to display!</div>
                     ) : (
                 <>
-                  <Button style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}} />
+                  <Button style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}>Logout</Button>
                     {films.map((film) => (
                         <FilmCard
                         key={films._id}

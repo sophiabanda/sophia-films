@@ -12,12 +12,22 @@ body {
 }
 
 .detail-poster {
-  width: 500px;
+  width: 100%;
+  margin: 10px;
 }
 
 .back-button {
   width: 250px;
   margin: 20px;
+}
+
+#root {
+  border: 1px solid red;
+  padding: 10px;
+}
+
+.title, .director, .genres, .summary {
+  padding: 10px;
 }
 
 :root {

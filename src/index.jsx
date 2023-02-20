@@ -7,7 +7,7 @@ import "./index.scss";
 
 const FilmApp = () => {
   return (
-    <Container>
+    <Container style={{border: 'solid 2px blue'}}>
       <MainView />
     </Container>
   );

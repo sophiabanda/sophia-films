@@ -4,9 +4,11 @@ body {
 }
 
 .detail-poster {
-  width: 500px;
+  width: 100%;
+  margin: 10px;
 
 }
+
 
 .back-button {
   margin: 20px;
@@ -14,9 +16,10 @@ body {
 }
 
 
-// #root {
-//   padding: 10px;
-// }
+#root {
+  padding: 10px;
+  border: solid 1px red
+}
 
 // .grid-container {
 //   display: grid;
@@ -33,12 +36,8 @@ body {
 // }
 
 
-// .detail-poster {
-//   width: 350px;
-// }
-
-// .title, .director, .genres, .summary {
-//   padding: 10px;
-// }
+.title, .director, .genres, .summary {
+  padding: 10px;
+}
 
 

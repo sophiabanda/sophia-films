@@ -2932,6 +2932,9 @@ var _bootstrapMinCss = require("bootstrap/dist/css/bootstrap.min.css");
 var _indexScss = require("./index.scss");
 const FilmApp = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
+        style: {
+            border: "solid 2px blue"
+        },
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
             fileName: "src/index.jsx",
             lineNumber: 11,
@@ -27203,9 +27206,8 @@ const MainView = ()=>{
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
         style: {
-            width: "100%"
+            border: "dashed 3px chartreuse"
         },
-        className: "justify-content-md-center",
         children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
@@ -27245,7 +27247,8 @@ const MainView = ()=>{
                         setUser(null);
                         setToken(null);
                         localStorage.clear();
-                    }
+                    },
+                    children: "Logout"
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 60,
@@ -27292,37 +27295,39 @@ parcelHelpers.export(exports, "FilmCard", ()=>FilmCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactBootstrap = require("react-bootstrap");
 const FilmCard = ({ film , onFilmClick  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+    return(//mb-5 sets a margin botton using bootstrap utility classes
+    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+        className: "mb-5",
         sm: 3,
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
+            className: "h-100",
             onClick: ()=>{
                 onFilmClick(film);
             },
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
                     src: film.image,
-                    variant: "top",
                     className: "poster"
                 }, film._id, false, {
                     fileName: "src/components/film-card/film-card.jsx",
-                    lineNumber: 8,
+                    lineNumber: 9,
                     columnNumber: 21
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/film-card/film-card.jsx",
-                lineNumber: 7,
+                lineNumber: 8,
                 columnNumber: 17
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/film-card/film-card.jsx",
-            lineNumber: 6,
+            lineNumber: 7,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/film-card/film-card.jsx",
-        lineNumber: 5,
+        lineNumber: 6,
         columnNumber: 9
-    }, undefined);
+    }, undefined));
 };
 _c = FilmCard;
 var _c;
@@ -41079,10 +41084,11 @@ const FilmDetails = ({ film , backButtonClick  })=>{
             border: "2px solid red"
         },
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                className: "back-button",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                variant: "danger",
                 style: {
-                    cursor: "pointer"
+                    cursor: "pointer",
+                    width: "350px"
                 },
                 onClick: backButtonClick,
                 children: "Back"
