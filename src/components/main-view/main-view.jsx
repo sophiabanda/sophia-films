@@ -56,7 +56,7 @@ export const MainView = () => {
             <Row>
                 <Routes>
                     <Route
-                    path='signup'
+                    path='/signup'
                     element={
                         <>
                         {user ? (
@@ -97,7 +97,7 @@ export const MainView = () => {
                     element={
                         <>
                             {films.map((film) => {
-                                <FilmCard film={film} key={films._id}></FilmCard>
+                                return <FilmCard film={film} key={films._id}></FilmCard>
                             })}
                         </>
                     }
