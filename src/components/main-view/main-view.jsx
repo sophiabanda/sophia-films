@@ -4,6 +4,7 @@ import { FilmDetails } from '../film-details/film-details';
 import { LoginView } from '../login-view/login-view';
 import { SignUp } from '../signup-view/signup-view';
 import { Button, Row } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -51,30 +52,59 @@ export const MainView = () => {
 
 
     return (
-        <Row>
-            {!user ? (
-                <>
-                  <LoginView onLoggedIn={(user) => setUser(user)} /> or <SignUp />
-                </>
-                    ) : selectedFilm ? (
-                        <FilmDetails film={selectedFilm} backButtonClick={() => setSelectedFilm(null)}/>
-                    ) : films.length === 0 ? (
-                        <div>Sorry, no films to display!</div>
-                    ) : (
-                <>
-                  <Button className='logout-button' style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}>Logout</Button>
-                    {films.map((film) => (
-                        <FilmCard
-                        key={films._id}
-                        film={film}
-                        onFilmClick={(newSelectedFilm) => {setSelectedFilm(newSelectedFilm)}}
-                        ></FilmCard>
-                        ))}
-                </>
-            )
-        }
-        </Row>
+        <BrowserRouter>
+            <Row>
+                <Routes>
+                    <Route
+                    path='signup'
+                    element={
+                        <>
+                        {user ? (
+                            <Navigate to='/' />
+                        ) : (
+                            <SignUp />
+                        )}
+                        </>
+                    }></Route>
+                    <Route
+                    path='/login'
+                    element={
+                        <>
+                        {user ? (
+                            <Navigate to='/' />
+                        ) : (
+                            <LoginView onLoggedIn={(user) => setUser(user)} />
+                        )}
+                        </>
+                    }></Route>
+                    <Route
+                    path='/films/:Title'
+                    element={
+                        <>
+                        {!user ? (
+                            <Navigate to='/login' replace />
+                        ) : films.length === 0 ? (
+                            <div>Sorry! We may have no films to display.</div>
+                        ) : (
+                            <FilmDetails film={film}></FilmDetails>
+                        )
+                        }
+                        </>
+                    }
+                    ></Route>
+                    <Route
+                    path='/'
+                    element={
+                        <>
+                            {films.map((film) => {
+                                <FilmCard film={film} key={films._id}></FilmCard>
+                            })}
+                        </>
+                    }
+                    ></Route>
+                </Routes>
+            </Row>
+        </BrowserRouter>
     )
 }
 
-//Button's length is exceeding the size of the row container.
