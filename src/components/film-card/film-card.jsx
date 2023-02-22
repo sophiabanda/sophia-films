@@ -1,5 +1,6 @@
 import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import { PropTypes } from 'prop-types';
 
 export const FilmCard = ({film, onFilmClick}) => {
     return (
@@ -15,5 +16,10 @@ export const FilmCard = ({film, onFilmClick}) => {
     )
 }
 
-
+FilmCard.propTypes = {
+    film: PropTypes.shape({
+        title: PropTypes.string
+    }).isRequired,
+    onBookClick: PropTypes.func.isRequired
+}
 
