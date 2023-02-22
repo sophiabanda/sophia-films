@@ -27328,7 +27328,7 @@ const FilmCard = ({ film , onFilmClick  })=>{
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: `/films/${encodeURIComponent(film.Title)}`
+                        to: `/films/${encodeURIComponent(film.title)}`
                     }, void 0, false, {
                         fileName: "src/components/film-card/film-card.jsx",
                         lineNumber: 11,
