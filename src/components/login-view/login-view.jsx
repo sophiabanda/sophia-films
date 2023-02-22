@@ -24,6 +24,7 @@ export const LoginView = ({onLoggedIn}) => {
             headers: {
                 'Content-Type': 'application/json'
             },
+            //should exist in docs. "expect to include these headers". there are other foms, botincl. api's have restriction for what kind of data it expects.
             body: JSON.stringify(data)
         }).then((response) => response.json())
           .then((data) => {
