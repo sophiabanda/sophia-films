@@ -3,6 +3,8 @@ import { FilmCard } from '../film-card/film-card';
 import { FilmDetails } from '../film-details/film-details';
 import { LoginView } from '../login-view/login-view';
 import { SignUp } from '../signup-view/signup-view';
+import { Button, Row } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -39,46 +41,74 @@ export const MainView = () => {
                 }
             })
 
-            setFilms(filmAPI)
+            const fetchedFilms = filmAPI.sort((a, b) => a.title.localeCompare(b.title))
+            setFilms(fetchedFilms);
+            //With fetchedFilms we're requesting the the initially returned array be sorted alphabetically with sort & localCompare
+            //Doing this before they're set as state ensures faster performance by ensuring we do not sort with every re-render in return.
+
         })
-    }, [token])
+    }, [token]);
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
 
-    if (!user) {
-        return (
-          <>
-            <LoginView onLoggedIn={(user, token) => {
-              setUser(user);
-              setToken(token);
-            }} />
-            or
-            <SignUp />
-          </>
-        );
-      }
-
-    if(selectedFilm) {
-        return (
-            <FilmDetails film={selectedFilm} backButtonClick={() => setSelectedFilm(null)}/>
-        )
-    }
-
-    if(films.length === 0) {
-        return <div>Sorry, no films to display!</div>
-    }
 
     return (
-        <div>
-            <button style={{cursor: 'pointer'}} onClick={() => { setUser(null); setToken(null); localStorage.clear() }}>Logout</button>
-            <div className='grid-container'>
-            {films.map((film) => (
-            <FilmCard
-                key={films._id}
-                film={film}
-                onFilmClick={(newSelectedFilm) => {
-                    setSelectedFilm(newSelectedFilm);
-                }}/>))}
-            </div>
-        </div>
+        <BrowserRouter>
+            <Row>
+                <Routes>
+                    <Route
+                        path='/signup'
+                        element={
+                          <>
+                            {user ? (
+                                <Navigate to='/' />
+                            ) : (
+                                <SignUp />
+                            )}
+                          </>
+                    }></Route>
+                    <Route
+                    path='/login'
+                    element={
+                        <>
+                        {user ? (
+                            <Navigate to='/' />
+                        ) : (
+                            <LoginView
+                            onLoggedIn={(user, token) => {
+                                setUser(user);
+                                setToken(token)
+                            }} />
+                        )}
+                        </>
+                    }></Route>
+                    <Route
+                    path='/films/:Title'
+                    element={
+                        <>
+                        {!user ? (
+                            <Navigate to='/login' replace />
+                        ) : films.length === 0 ? (
+                            <div>Sorry! We may have no films to display.</div>
+                        ) : (
+                            <FilmDetails film={film}></FilmDetails>
+                        )
+                        }
+                        </>
+                    }
+                    ></Route>
+                    <Route
+                    path='/'
+                    element={
+                        <>
+                            {films.map((film) => {
+                                 <FilmCard film={selectedFilm} ></FilmCard>
+                            })}
+                        </>
+                    }
+                    ></Route>
+                </Routes>
+            </Row>
+        </BrowserRouter>
     )
 }
+
