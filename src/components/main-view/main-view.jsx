@@ -27,6 +27,7 @@ export const MainView = () => {
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
+            //initial returned array
             const filmAPI = data.map((item) => {
                 const genres = item.Genres.map(genre => genre.Type);
                 const director = item.Director ? item.Director.Name : null;
@@ -44,7 +45,8 @@ export const MainView = () => {
             setFilms(fetchedFilms);
             //With fetchedFilms we're requesting the the initially returned array be sorted alphabetically with sort & localCompare
             //Doing this before they're set as state ensures faster performance by ensuring we do not sort with every re-render in return.
-
+            console.log(fetchedFilms)
+            //fetchedFilms is the alphabetical array
         })
     }, [token]);
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
