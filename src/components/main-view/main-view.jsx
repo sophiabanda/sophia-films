@@ -51,66 +51,68 @@ export const MainView = () => {
     }, [token]);
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
 
-
     return (
-        <BrowserRouter>
-            <Row>
-                <Routes>
-                    <Route
-                    path='/films/:id'
-                    element={
-                        <>
-                        {!user ? (
-                            <Navigate to='/login' replace />
-                        ) : films.length === 0 ? (
-                            <div>Sorry! We may have no films to display.</div>
-                        ) : (
-                            <>
-                            <FilmDetails></FilmDetails>
-                            </>
-                        )
-                        }
-                        </>
-                    }
-                    ></Route>
-                    <Route
-                        path='/signup'
-                        element={
-                            <>
-                            {user ? (
-                                <Navigate to='/' />
-                            ) : (
-                                <SignUp />
-                            )}
-                          </>
-                    }></Route>
-                    <Route
-                    path='/login'
-                    element={
-                        <>
-                        {user ? (
-                            <Navigate to='/' />
-                        ) : (
-                            <LoginView
-                            onLoggedIn={(user, token) => {
-                                setUser(user);
-                                setToken(token)
-                            }} />
-                        )}
-                        </>
-                    }></Route>
-                    <Route
-                    path='/'
-                    element={
-                        <>
-                           {films.map((film) => {
-                                <FilmCard film={film}></FilmCard>
-                            })}
-                        </>
-                    }
-                    ></Route>
-                </Routes>
-            </Row>
-        </BrowserRouter>
+        <Row>
+            <>
+            <Button className='logout-button' style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}>Logout</Button>
+            {films.map((film) => (
+                <FilmCard
+                key={films._id}
+                film={film}
+                onFilmClick={(newSelectedFilm) => {setSelectedFilm(newSelectedFilm)}}
+                ></FilmCard>
+                ))}
+            </>
+        </Row>
     )
-}
+
+//     return (
+//         <BrowserRouter>
+//                 <Routes>
+//                     <Route
+//                     path='/films/:id'
+//                     element={
+//                         <>
+//                         {!user ? (
+//                             <Navigate to='/login' replace />
+//                         ) : films.length === 0 ? (
+//                             <div>Sorry! We may have no films to display.</div>
+//                         ) : (
+//                             <>
+//                             <FilmDetails></FilmDetails>
+//                             </>
+//                         )
+//                         }
+//                         </>
+//                     }
+//                     ></Route>
+//                     <Route
+//                         path='/signup'
+//                         element={
+//                             <>
+//                             {user ? (
+//                                 <Navigate to='/' />
+//                             ) : (
+//                                 <SignUp />
+//                             )}
+//                           </>
+//                     }></Route>
+//                     <Route
+//                     path='/login'
+//                     element={
+
+//                     }></Route>
+//                     <Route
+//                     path='/'
+//                     element={
+//                         <>
+//                            {films.map((film) => {
+//                                 <FilmCard film={film}></FilmCard>
+//                             })}
+//                         </>
+//                     }
+//                     ></Route>
+//                 </Routes>
+//         </BrowserRouter>
+//     )
+// }
