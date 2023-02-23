@@ -59,7 +59,16 @@ export const MainView = () => {
         <Row>
             <Routes>
                 <Route
-                path='/'
+                path='/login'
+                element={
+                    <>
+                    {user ? (
+                        <Navigate to='/' />
+                    ) : (
+                        <LoginView/>
+                    )}
+                    </>
+                }
                 >
                 </Route>
             </Routes>
