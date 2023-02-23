@@ -1,6 +1,6 @@
 import { Card, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom'
 
 export const FilmCard = ({film}) => {
     return (
@@ -9,7 +9,7 @@ export const FilmCard = ({film}) => {
             <Card className='h-100' onClick={() => {onFilmClick(film)}}>
                 <Card.Body>
                     <Card.Img key={film._id} src={film.image} className='poster'></Card.Img>
-                    <Link to={`/films/${encodeURIComponent(film._id)}`}></Link>
+                    <Link to={`/films/${encodeURIComponent(film.title)}`}></Link>
                 </Card.Body>
             </Card>
         </Col>
