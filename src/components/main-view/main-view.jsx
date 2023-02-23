@@ -56,15 +56,15 @@ export const MainView = () => {
             <Row>
                 <Routes>
                     <Route
-                    path='/signup'
-                    element={
-                        <>
-                        {user ? (
-                            <Navigate to='/' />
-                        ) : (
-                            <SignUp />
-                        )}
-                        </>
+                        path='/signup'
+                        element={
+                          <>
+                            {user ? (
+                                <Navigate to='/' />
+                            ) : (
+                                <SignUp />
+                            )}
+                          </>
                     }></Route>
                     <Route
                     path='/login'
@@ -73,7 +73,11 @@ export const MainView = () => {
                         {user ? (
                             <Navigate to='/' />
                         ) : (
-                            <LoginView onLoggedIn={(user) => setUser(user)} />
+                            <LoginView
+                            onLoggedIn={(user, token) => {
+                                setUser(user);
+                                setToken(token)
+                            }} />
                         )}
                         </>
                     }></Route>
@@ -97,7 +101,7 @@ export const MainView = () => {
                     element={
                         <>
                             {films.map((film) => {
-                                return <FilmCard film={selectedFilm} key={films._id}></FilmCard>
+                                 <FilmCard film={selectedFilm} ></FilmCard>
                             })}
                         </>
                     }
