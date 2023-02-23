@@ -4,6 +4,8 @@ import { FilmDetails } from '../film-details/film-details';
 import { LoginView } from '../login-view/login-view';
 import { SignUp } from '../signup-view/signup-view';
 import { Button, Row } from 'react-bootstrap';
+import { Browser, Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -53,29 +55,16 @@ export const MainView = () => {
 
 
     return (
+        <BrowserRouter>
         <Row>
-            {!user ? (
-                <>
-                  <LoginView onLoggedIn={(user) => setUser(user)} /> or <SignUp />
-                </>
-                    ) : selectedFilm ? (
-                        <FilmDetails film={selectedFilm} backButtonClick={() => setSelectedFilm(null)}/>
-                    ) : films.length === 0 ? (
-                        <div>Sorry, no films to display!</div>
-                    ) : (
-                <>
-                  <Button className='logout-button' style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}>Logout</Button>
-                    {films.map((film) => (
-                        <FilmCard
-                        key={films._id}
-                        film={film}
-                        onFilmClick={(newSelectedFilm) => {setSelectedFilm(newSelectedFilm)}}
-                        ></FilmCard>
-                        ))}
-                </>
-            )
-        }
+            <Routes>
+                <Route
+                path='/'
+                >
+                </Route>
+            </Routes>
         </Row>
+        </BrowserRouter>
     )
 }
 
