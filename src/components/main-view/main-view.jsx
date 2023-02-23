@@ -11,7 +11,7 @@ export const MainView = () => {
     const storedToken = localStorage.getItem('token');
     //stores user token locally to keep user logged in after sign-in
     const [films, setFilms] = useState([]);
-    const [selectedFilm, setSelectedFilm] = useState(null);
+    // const [selectedFilm, setSelectedFilm] = useState(null);
     const [user, setUser] = useState(storedUser ? storedUser : null);
     const [token, setToken] = useState(storedToken ? storedToken : null);
     //checks for user and token
@@ -90,7 +90,11 @@ export const MainView = () => {
                         ) : films.length === 0 ? (
                             <div>Sorry! We may have no films to display.</div>
                         ) : (
-                            <FilmDetails film={selectedFilm}></FilmDetails>
+                            <>
+                            {films.map((film) => {
+                                <FilmDetails film={film}></FilmDetails>
+                            })}
+                            </>
                         )
                         }
                         </>
@@ -100,9 +104,7 @@ export const MainView = () => {
                     path='/'
                     element={
                         <>
-                            {films.map((film) => {
-                                 <FilmCard film={selectedFilm} ></FilmCard>
-                            })}
+                            <FilmCard></FilmCard>
                         </>
                     }
                     ></Route>

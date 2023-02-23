@@ -27172,7 +27172,7 @@ const MainView = ()=>{
     const storedToken = localStorage.getItem("token");
     //stores user token locally to keep user logged in after sign-in
     const [films, setFilms] = (0, _react.useState)([]);
-    const [selectedFilm, setSelectedFilm] = (0, _react.useState)(null);
+    // const [selectedFilm, setSelectedFilm] = useState(null);
     const [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
     const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
     //checks for user and token
@@ -27247,9 +27247,13 @@ const MainView = ()=>{
                                 replace: true
                             }, void 0, false, void 0, void 0) : films.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 children: "Sorry! We may have no films to display."
-                            }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmDetails.FilmDetails), {
-                                film: selectedFilm
-                            }, void 0, false, void 0, void 0)
+                            }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: films.map((film)=>{
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmDetails.FilmDetails), {
+                                        film: film
+                                    }, void 0, false, void 0, void 0);
+                                })
+                            }, void 0, false)
                         }, void 0, false)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
@@ -27259,15 +27263,11 @@ const MainView = ()=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                         path: "/",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-                            children: films.map((film)=>{
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmCard.FilmCard), {
-                                    film: selectedFilm
-                                }, void 0, false, void 0, void 0);
-                            })
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmCard.FilmCard), {}, void 0, false, void 0, void 0)
                         }, void 0, false)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 99,
+                        lineNumber: 103,
                         columnNumber: 21
                     }, undefined)
                 ]
@@ -27287,7 +27287,7 @@ const MainView = ()=>{
         columnNumber: 9
     }, undefined);
 };
-_s(MainView, "cyVLFkHuUdOW83KCwohxGQYJsis=");
+_s(MainView, "Upt2kSUSPRhrB7pjiq5Q0bD0t+8=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
