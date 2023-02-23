@@ -27311,7 +27311,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _propTypes = require("prop-types");
-const FilmCard = ({ film , onFilmClick  })=>{
+const FilmCard = ({ film  })=>{
     return(//mb-5 sets a margin botton using bootstrap utility classes
     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
         className: "mb-5",
@@ -27332,7 +27332,7 @@ const FilmCard = ({ film , onFilmClick  })=>{
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: `/films/${encodeURIComponent(film.title)}`
+                        to: `/films/${encodeURIComponent(film._id)}`
                     }, void 0, false, {
                         fileName: "src/components/film-card/film-card.jsx",
                         lineNumber: 12,
