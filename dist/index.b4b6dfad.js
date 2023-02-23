@@ -27258,7 +27258,7 @@ const MainView = ()=>{
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                             children: films.map((film1)=>{
                                 return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmCard.FilmCard), {
-                                    film: film1
+                                    film: selectedFilm
                                 }, films._id, false, void 0, void 0);
                             })
                         }, void 0, false)
