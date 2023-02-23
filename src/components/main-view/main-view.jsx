@@ -91,9 +91,7 @@ export const MainView = () => {
                             <div>Sorry! We may have no films to display.</div>
                         ) : (
                             <>
-                            {films.map((film) => {
-                                <FilmDetails film={film}></FilmDetails>
-                            })}
+                            <FilmDetails></FilmDetails>
                             </>
                         )
                         }
@@ -104,7 +102,9 @@ export const MainView = () => {
                     path='/'
                     element={
                         <>
-                            <FilmCard></FilmCard>
+                           {films.map((film) => {
+                                <FilmDetails film={film}></FilmDetails>
+                            })}
                         </>
                     }
                     ></Route>
