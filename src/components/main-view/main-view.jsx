@@ -90,7 +90,7 @@ export const MainView = () => {
                         ) : films.length === 0 ? (
                             <div>Sorry! We may have no films to display.</div>
                         ) : (
-                            <FilmDetails film={film}></FilmDetails>
+                            <FilmDetails film={selectedFilm}></FilmDetails>
                         )
                         }
                         </>

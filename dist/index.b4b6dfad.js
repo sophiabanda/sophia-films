@@ -27248,7 +27248,7 @@ const MainView = ()=>{
                             }, void 0, false, void 0, void 0) : films.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 children: "Sorry! We may have no films to display."
                             }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmDetails.FilmDetails), {
-                                film: film
+                                film: selectedFilm
                             }, void 0, false, void 0, void 0)
                         }, void 0, false)
                     }, void 0, false, {
@@ -27259,7 +27259,7 @@ const MainView = ()=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                         path: "/",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-                            children: films.map((film1)=>{
+                            children: films.map((film)=>{
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmCard.FilmCard), {
                                     film: selectedFilm
                                 }, void 0, false, void 0, void 0);
