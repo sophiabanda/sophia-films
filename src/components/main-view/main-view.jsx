@@ -57,9 +57,26 @@ export const MainView = () => {
             <Row>
                 <Routes>
                     <Route
+                    path='/films/:id'
+                    element={
+                        <>
+                        {!user ? (
+                            <Navigate to='/login' replace />
+                        ) : films.length === 0 ? (
+                            <div>Sorry! We may have no films to display.</div>
+                        ) : (
+                            <>
+                            <FilmDetails></FilmDetails>
+                            </>
+                        )
+                        }
+                        </>
+                    }
+                    ></Route>
+                    <Route
                         path='/signup'
                         element={
-                          <>
+                            <>
                             {user ? (
                                 <Navigate to='/' />
                             ) : (
@@ -82,23 +99,6 @@ export const MainView = () => {
                         )}
                         </>
                     }></Route>
-                    <Route
-                    path='/films/:Title'
-                    element={
-                        <>
-                        {!user ? (
-                            <Navigate to='/login' replace />
-                        ) : films.length === 0 ? (
-                            <div>Sorry! We may have no films to display.</div>
-                        ) : (
-                            <>
-                            <FilmDetails></FilmDetails>
-                            </>
-                        )
-                        }
-                        </>
-                    }
-                    ></Route>
                     <Route
                     path='/'
                     element={
