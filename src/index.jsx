@@ -9,14 +9,7 @@ import "./index.scss";
 const FilmApp = () => {
   return (
     <Container fluid>
-      <BrowserRouter>
-      <Routes>
-        <Route></Route>
-        <Route></Route>
-        <Route></Route>
-        <Route></Route>
-      </Routes>
-      </BrowserRouter>
+      <MainView></MainView>
     </Container>
   );
 };
@@ -28,3 +21,11 @@ const root = createRoot(container);
 // Tells React to render your app in the root DOM element
 root.render(<FilmApp />);
 
+<BrowserRouter>
+      <Routes>
+        <Route></Route>
+        <Route></Route>
+        <Route></Route>
+        <Route></Route>
+      </Routes>
+      </BrowserRouter>
