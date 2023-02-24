@@ -4,7 +4,7 @@ import { FilmDetails } from '../film-details/film-details';
 import { LoginView } from '../login-view/login-view';
 import { SignUp } from '../signup-view/signup-view';
 import { Button, Row } from 'react-bootstrap';
-import { Browser, Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 
 
 export const MainView = () => {
@@ -58,39 +58,40 @@ export const MainView = () => {
             <Row>
                 <Routes>
                     <Route
-                    path='signup'
+                    path='/signup'
                     element={
                         <>
-                        {user ? (
-                            <Navigate to='/' />
-                        ) : (
-                            <SignUp />
-                        )}
+                            {user ? (
+                                <Navigate to='/' />
+                            ) : (
+                                <SignUp />
+                            )}
                         </>
-                    }></Route>
+                    }
+                    ></Route>
                     <Route
                     path='/login'
                     element={
                         <>
-                        {user ? (
-                            <Navigate to='/' />
-                        ) : (
-                            <LoginView onLoggedIn={(user) => setUser(user)} />
-                        )}
+                            {user ? (
+                                <Navigate to='/' />
+                            ) : (
+                                <LoginView onLoggedIn={(user) => setUser(user)}/>
+                            )}
                         </>
-                    }></Route>
+                    }
+                    ></Route>
                     <Route
-                    path='/films/:Title'
+                    path='films/:title'
                     element={
                         <>
-                        {!user ? (
-                            <Navigate to='/login' replace />
-                        ) : films.length === 0 ? (
-                            <div>Sorry! We may have no films to display.</div>
-                        ) : (
-                            <FilmDetails></FilmDetails>
-                        )
-                        }
+                            {!user ? (
+                                <Navigate to='/login' replace />
+                            ) : films.length === 0 ? (
+                                <div>Sorry! We may have no films to display.</div>
+                            ) : (
+                                <FilmDetails></FilmDetails>
+                            )}
                         </>
                     }
                     ></Route>
@@ -109,6 +110,4 @@ export const MainView = () => {
         </BrowserRouter>
     )
 }
-
-
 //Button's length is exceeding the size of the row container.

@@ -2955,40 +2955,6 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(FilmApp, {}, void 0, false,
     lineNumber: 22,
     columnNumber: 13
 }, undefined));
-/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
-    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {}, void 0, false, {
-                fileName: "src/index.jsx",
-                lineNumber: 26,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {}, void 0, false, {
-                fileName: "src/index.jsx",
-                lineNumber: 27,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {}, void 0, false, {
-                fileName: "src/index.jsx",
-                lineNumber: 28,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {}, void 0, false, {
-                fileName: "src/index.jsx",
-                lineNumber: 29,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/index.jsx",
-        lineNumber: 25,
-        columnNumber: 7
-    }, undefined)
-}, void 0, false, {
-    fileName: "src/index.jsx",
-    lineNumber: 24,
-    columnNumber: 1
-}, undefined);
 var _c;
 $RefreshReg$(_c, "FilmApp");
 
@@ -27249,7 +27215,7 @@ const MainView = ()=>{
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "signup",
+                        path: "/signup",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                             children: user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                                 to: "/"
@@ -27271,11 +27237,11 @@ const MainView = ()=>{
                         }, void 0, false)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 71,
+                        lineNumber: 72,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/films/:Title",
+                        path: "films/:title",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                             children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                                 to: "/login",
@@ -27286,7 +27252,7 @@ const MainView = ()=>{
                         }, void 0, false)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 82,
+                        lineNumber: 84,
                         columnNumber: 21
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27300,7 +27266,7 @@ const MainView = ()=>{
                         }, void 0, false)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 97,
+                        lineNumber: 98,
                         columnNumber: 21
                     }, undefined)
                 ]
