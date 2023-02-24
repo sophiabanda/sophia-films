@@ -53,28 +53,62 @@ export const MainView = () => {
     }, [token]);
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
 
-
     return (
-        <BrowserRouter>
-        <Row>
-            <Routes>
-                <Route
-                path='/login'
-                element={
-                    <>
-                    {user ? (
-                        <Navigate to='/' />
-                    ) : (
-                        <LoginView/>
-                    )}
-                    </>
-                }
-                >
-                </Route>
-            </Routes>
-        </Row>
+    <BrowserRouter>
+            <Row>
+                <Routes>
+                    <Route
+                    path='signup'
+                    element={
+                        <>
+                        {user ? (
+                            <Navigate to='/' />
+                        ) : (
+                            <SignUp />
+                        )}
+                        </>
+                    }></Route>
+                    <Route
+                    path='/login'
+                    element={
+                        <>
+                        {user ? (
+                            <Navigate to='/' />
+                        ) : (
+                            <LoginView onLoggedIn={(user) => setUser(user)} />
+                        )}
+                        </>
+                    }></Route>
+                    <Route
+                    path='/films/:Title'
+                    element={
+                        <>
+                        {!user ? (
+                            <Navigate to='/login' replace />
+                        ) : films.length === 0 ? (
+                            <div>Sorry! We may have no films to display.</div>
+                        ) : (
+                            <FilmDetails></FilmDetails>
+                        )
+                        }
+                        </>
+                    }
+                    ></Route>
+                    <Route
+                    path='/'
+                    element={
+                        <>
+                            {films.map((film) => {
+                                return <FilmCard film={film} key={films._id}></FilmCard>
+                            })}
+                        </>
+                    }
+                    ></Route>
+                </Routes>
+            </Row>
         </BrowserRouter>
     )
 }
+
 
 //Button's length is exceeding the size of the row container.
