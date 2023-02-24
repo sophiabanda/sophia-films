@@ -103,7 +103,10 @@ export const MainView = () => {
                     element={
                         <>
                             {films.map((film) => {
-                                return <FilmCard film={film} key={films._id}></FilmCard>
+                                return <FilmCard
+                                        film={film}
+                                        key={films._id}>
+                                     </FilmCard>
                             })}
                         </>
                     }
