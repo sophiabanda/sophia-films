@@ -29,6 +29,7 @@ export const SignUp = () => {
             //tells the server that the data being sent in the request is json so that the server can properly parse the data
         }).then((response) => {
             if(response.ok) {
+              <Navigate to='/' />
                 alert('Signup successful!');
                 window.location.reload();
             } else {

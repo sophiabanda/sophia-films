@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { Navigate } from 'react-router-dom';
 
 
 export const LoginView = ({onLoggedIn}) => {
@@ -35,6 +36,7 @@ export const LoginView = ({onLoggedIn}) => {
                 localStorage.setItem('token', data.token);
                 onLoggedIn(data.user, data.token);
             } else {
+                <Navigate to='/signup' />
                 alert('No such user.')
             }
         }).catch((e) => {

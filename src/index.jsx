@@ -2,7 +2,6 @@ import { createRoot } from 'react-dom/client';
 import { MainView } from './components/main-view/main-view';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.scss";
 import { LoginView } from './components/login-view/login-view';
