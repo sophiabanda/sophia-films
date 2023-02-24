@@ -27287,55 +27287,7 @@ const MainView = ()=>{
         fileName: "src/components/main-view/main-view.jsx",
         lineNumber: 55,
         columnNumber: 9
-    }, undefined); //     return (
-     //         <BrowserRouter>
-     //                 <Routes>
-     //                     <Route
-     //                     path='/films/:id'
-     //                     element={
-     //                         <>
-     //                         {!user ? (
-     //                             <Navigate to='/login' replace />
-     //                         ) : films.length === 0 ? (
-     //                             <div>Sorry! We may have no films to display.</div>
-     //                         ) : (
-     //                             <>
-     //                             <FilmDetails></FilmDetails>
-     //                             </>
-     //                         )
-     //                         }
-     //                         </>
-     //                     }
-     //                     ></Route>
-     //                     <Route
-     //                         path='/signup'
-     //                         element={
-     //                             <>
-     //                             {user ? (
-     //                                 <Navigate to='/' />
-     //                             ) : (
-     //                                 <SignUp />
-     //                             )}
-     //                           </>
-     //                     }></Route>
-     //                     <Route
-     //                     path='/login'
-     //                     element={
-     //                     }></Route>
-     //                     <Route
-     //                     path='/'
-     //                     element={
-     //                         <>
-     //                            {films.map((film) => {
-     //                                 <FilmCard film={film}></FilmCard>
-     //                             })}
-     //                         </>
-     //                     }
-     //                     ></Route>
-     //                 </Routes>
-     //         </BrowserRouter>
-     //     )
-     // }
+    }, undefined);
 };
 _s(MainView, "Upt2kSUSPRhrB7pjiq5Q0bD0t+8=");
 _c = MainView;
