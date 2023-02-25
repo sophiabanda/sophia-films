@@ -28,7 +28,6 @@ export const MainView = () => {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             //initial returned array
             const filmAPI = data.map((item) => {
                 const genres = item.Genres.map(genre => genre.Type);
