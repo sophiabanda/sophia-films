@@ -85,7 +85,7 @@ export const MainView = () => {
                     }
                     ></Route>
                     <Route
-                    path='films/:title'
+                    path='films/:filmTitle'
                     element={
                         <>
                             {!user ? (
@@ -102,12 +102,16 @@ export const MainView = () => {
                     path='/'
                     element={
                         <>
-                            {films.map((film) => {
-                                return <FilmCard
-                                        film={film}
-                                        key={films._id}>
-                                     </FilmCard>
-                            })}
+                            {user ? (
+                                films.map((film) => {
+                                    return <FilmCard
+                                            film={film}
+                                            key={films._id}>
+                                         </FilmCard>
+                                })
+                            ) : (
+                                <LoginView />
+                            )}
                         </>
                     }
                     ></Route>
@@ -117,3 +121,4 @@ export const MainView = () => {
     )
 }
 //Button's length is exceeding the size of the row container.
+
