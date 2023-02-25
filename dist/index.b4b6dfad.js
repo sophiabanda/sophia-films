@@ -2965,7 +2965,7 @@ const FilmApp = ()=>{
                         columnNumber: 19
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                        path: "/films/:title",
+                        path: "/films/:filmTitle",
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmDetails.FilmDetails), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/index.jsx",
@@ -27218,7 +27218,7 @@ const MainView = ()=>{
     const storedToken = localStorage.getItem("token");
     //stores user token locally to keep user logged in after sign-in
     const [films, setFilms] = (0, _react.useState)([]);
-    // const [selectedFilm, setSelectedFilm] = useState(null);
+    const [selectedFilm, setSelectedFilm] = (0, _react.useState)(null);
     const [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
     const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
     //checks for user and token
@@ -27295,7 +27295,7 @@ const MainView = ()=>{
         columnNumber: 9
     }, undefined);
 };
-_s(MainView, "Upt2kSUSPRhrB7pjiq5Q0bD0t+8=");
+_s(MainView, "cyVLFkHuUdOW83KCwohxGQYJsis=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -27319,14 +27319,17 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactBootstrap = require("react-bootstrap");
 var _propTypes = require("prop-types");
 var _reactRouterDom = require("react-router-dom");
-const FilmCard = ({ film  })=>{
+const FilmCard = ({ film , onFilmClick  })=>{
     return(//mb-5 sets a margin botton using bootstrap utility classes
     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
         className: "mb-5",
         sm: 3,
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-            to: `/films/${encodeURIComponent(film._id)}`,
+            to: `/films/${encodeURIComponent(film.title)}`,
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
+                onClick: ()=>{
+                    onFilmClick(film);
+                },
                 className: "h-100",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {

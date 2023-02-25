@@ -12,7 +12,7 @@ export const MainView = () => {
     const storedToken = localStorage.getItem('token');
     //stores user token locally to keep user logged in after sign-in
     const [films, setFilms] = useState([]);
-    // const [selectedFilm, setSelectedFilm] = useState(null);
+    const [selectedFilm, setSelectedFilm] = useState(null);
     const [user, setUser] = useState(storedUser ? storedUser : null);
     const [token, setToken] = useState(storedToken ? storedToken : null);
     //checks for user and token
