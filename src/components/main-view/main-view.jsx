@@ -5,6 +5,7 @@ import { LoginView } from '../login-view/login-view';
 import { SignUp } from '../signup-view/signup-view';
 import { Button, Row } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { NavBar } from '../nav-bar/nav-bar';
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -53,6 +54,7 @@ export const MainView = () => {
 
     return (
         <Row>
+            <NavBar></NavBar>
             <>
             <Button className='logout-button' style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}>Logout</Button>
             {films.map((film) => (

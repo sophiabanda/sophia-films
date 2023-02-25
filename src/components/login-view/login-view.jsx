@@ -1,13 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
-export const LoginView = ({onLoggedIn}) => {
+export const LoginView = () => {
 
     const [username, setUsername] =  useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -29,15 +30,16 @@ export const LoginView = ({onLoggedIn}) => {
             body: JSON.stringify(data)
         }).then((response) => response.json())
           .then((data) => {
-            console.log(`Login response ${data}`)
-            if(data.user) {
+            console.log(data.user)
+            if(data?.user) {
                 //this will set localstorage to continue user access while logged in
                 localStorage.setItem('user', JSON.stringify(data.user));
                 localStorage.setItem('token', data.token);
-                onLoggedIn(data.user, data.token);
+                // onLoggedIn(data.user, data.token);
+                navigate('/')
             } else {
-                <Navigate to='/signup' />
                 alert('No such user.')
+                navigate('/signup')
             }
         }).catch((e) => {
             alert('Something went wrong.')
