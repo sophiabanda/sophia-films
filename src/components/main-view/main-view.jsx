@@ -28,7 +28,6 @@ export const MainView = () => {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             const filmAPI = data.map((item) => {
                 const genres = item.Genres.map(genre => genre.Type);
                 const director = item.Director ? item.Director.Name : null;
@@ -44,7 +43,6 @@ export const MainView = () => {
 
             const fetchedFilms = filmAPI.sort((a, b) => a.title.localeCompare(b.title))
             setFilms(fetchedFilms);
-            console.log(fetchedFilms);
             //With fetchedFilms we're requesting the the initially returned array be sorted alphabetically with sort & localCompare
             //Doing this before they're set as state ensures faster performance by ensuring we do not sort with every re-render in return.
 
