@@ -1,14 +1,17 @@
 import { createRoot } from 'react-dom/client';
 import { MainView } from './components/main-view/main-view';
 import { Container } from 'react-bootstrap';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.scss";
 import { LoginView } from './components/login-view/login-view';
 import { SignUp } from './components/signup-view/signup-view';
 import { FilmDetails } from './components/film-details/film-details';
 
+
+
 const FilmApp = () => {
+
   return (
     <Container fluid>
       <BrowserRouter>
@@ -16,7 +19,7 @@ const FilmApp = () => {
                   <Route path='/login' element={<LoginView />}></Route>
                   <Route path='/' element={<MainView />}></Route>
                   <Route path='/signup' element={<SignUp />}></Route>
-                  <Route path='/films/:filmTitle' element={<FilmDetails />}></Route>
+                  <Route path='/films/:filmTitle' element={<FilmDetails film={film}/>}></Route>
                 </Routes>
         </BrowserRouter>
     </Container>

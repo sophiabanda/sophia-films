@@ -2945,7 +2945,7 @@ const FilmApp = ()=>{
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/index.jsx",
-                        lineNumber: 16,
+                        lineNumber: 19,
                         columnNumber: 19
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -2953,7 +2953,7 @@ const FilmApp = ()=>{
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/index.jsx",
-                        lineNumber: 17,
+                        lineNumber: 20,
                         columnNumber: 19
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -2961,31 +2961,33 @@ const FilmApp = ()=>{
                         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignUp), {}, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/index.jsx",
-                        lineNumber: 18,
+                        lineNumber: 21,
                         columnNumber: 19
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                         path: "/films/:filmTitle",
-                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmDetails.FilmDetails), {}, void 0, false, void 0, void 0)
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmDetails.FilmDetails), {
+                            film: film
+                        }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/index.jsx",
-                        lineNumber: 19,
+                        lineNumber: 22,
                         columnNumber: 19
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/index.jsx",
-                lineNumber: 15,
+                lineNumber: 18,
                 columnNumber: 17
             }, undefined)
         }, void 0, false, {
             fileName: "src/index.jsx",
-            lineNumber: 14,
+            lineNumber: 17,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/index.jsx",
-        lineNumber: 13,
+        lineNumber: 16,
         columnNumber: 5
     }, undefined);
 };
@@ -2996,7 +2998,7 @@ const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(FilmApp, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 31,
+    lineNumber: 34,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -27316,8 +27318,9 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "FilmCard", ()=>FilmCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
 var _reactBootstrap = require("react-bootstrap");
-var _propTypes = require("prop-types");
+// import { PropTypes } from 'prop-types';
 var _reactRouterDom = require("react-router-dom");
 const FilmCard = ({ film , onFilmClick  })=>{
     return(//mb-5 sets a margin botton using bootstrap utility classes
@@ -27325,7 +27328,7 @@ const FilmCard = ({ film , onFilmClick  })=>{
         className: "mb-5",
         sm: 3,
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-            to: `/films/${encodeURIComponent(film.title)}`,
+            to: `/films/${film.title}}`,
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
                 onClick: ()=>{
                     onFilmClick(film);
@@ -27337,27 +27340,27 @@ const FilmCard = ({ film , onFilmClick  })=>{
                         className: "poster"
                     }, film._id, false, {
                         fileName: "src/components/film-card/film-card.jsx",
-                        lineNumber: 12,
+                        lineNumber: 15,
                         columnNumber: 25
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/film-card/film-card.jsx",
-                    lineNumber: 11,
+                    lineNumber: 14,
                     columnNumber: 21
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/film-card/film-card.jsx",
-                lineNumber: 10,
+                lineNumber: 13,
                 columnNumber: 17
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/film-card/film-card.jsx",
-            lineNumber: 9,
+            lineNumber: 12,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/film-card/film-card.jsx",
-        lineNumber: 8,
+        lineNumber: 11,
         columnNumber: 9
     }, undefined));
 } // FilmCard.propTypes = {
@@ -27377,7 +27380,7 @@ $RefreshReg$(_c, "FilmCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","prop-types":"7wKI2"}],"a2gzh":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","react":"21dqq"}],"a2gzh":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -46583,15 +46586,33 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactRouterDom = require("react-router-dom");
 const NavBar = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-            to: "/login",
-            children: "Login"
-        }, void 0, false, {
-            fileName: "src/components/nav-bar/nav-bar.jsx",
-            lineNumber: 6,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false);
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: "/login",
+                children: "Login"
+            }, void 0, false, {
+                fileName: "src/components/nav-bar/nav-bar.jsx",
+                lineNumber: 6,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: "/signup",
+                children: "Sign Up"
+            }, void 0, false, {
+                fileName: "src/components/nav-bar/nav-bar.jsx",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: "/",
+                children: "Home"
+            }, void 0, false, {
+                fileName: "src/components/nav-bar/nav-bar.jsx",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true);
 };
 _c = NavBar;
 var _c;
