@@ -17,9 +17,9 @@ const FilmApp = () => {
       <BrowserRouter>
                 <Routes>
                   <Route path='/login' element={<LoginView />}></Route>
-                  <Route path='/' element={<MainView />}></Route>
+                  <Route path='/' element={<MainView/>}></Route>
                   <Route path='/signup' element={<SignUp />}></Route>
-                  <Route path='/films/:filmTitle' element={<FilmDetails film={film}/>}></Route>
+                  <Route path='/films/:filmTitle' element={<FilmDetails/>}></Route>
                 </Routes>
         </BrowserRouter>
     </Container>
