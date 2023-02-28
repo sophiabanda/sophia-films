@@ -7,8 +7,8 @@ export const FilmCard = ({film}) => {
         <Col className='mb-5' sm={3}>
             <Card className='h-100'>
                 <Card.Body>
-                    <Link to={`/films/${encodeURIComponent(film.title)}`}>
-                        <Card.Img variant='top' key={film._id} src={film.image} className='poster'></Card.Img>
+                    <Link to={`/films/${encodeURIComponent(film.id)}`}>
+                        <Card.Img variant='top' src={film.image} className='poster'></Card.Img>
                     </Link>
                 </Card.Body>
             </Card>

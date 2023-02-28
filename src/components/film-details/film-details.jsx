@@ -1,11 +1,18 @@
 import { Col, Button } from 'react-bootstrap';
+import { useParams, Link } from 'react-router-dom';
 
 import './film-details.scss'
 
-export const FilmDetails = ({film, backButtonClick}) => {
+export const FilmDetails = ({ films }) => {
+    const { filmId } = useParams();
+
+    const film = films.find((b) => b.id === filmId)
+
     return (
         <Col md={9}>
-            <Button variant='danger' style={{cursor: 'pointer', width: '350px'}} onClick={backButtonClick}>Back</Button>
+            <Link to={`/`}>
+            <Button variant='danger' style={{cursor: 'pointer', width: '350px'}}>Back</Button>
+            </Link>
             <div>
                 <img className="detail-poster" src={film.image}></img>
             </div>

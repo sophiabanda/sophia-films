@@ -84,7 +84,7 @@ export const MainView = () => {
                     }
                     ></Route>
                     <Route
-                    path='films/:filmTitle'
+                    path='films/:filmId'
                     element={
                         <>
                             {!user ? (
@@ -92,7 +92,7 @@ export const MainView = () => {
                             ) : films.length === 0 ? (
                                 <div>Sorry! We may have no films to display.</div>
                             ) : (
-                                <FilmDetails></FilmDetails>
+                                <FilmDetails films={films}></FilmDetails>
                             )}
                         </>
                     }
@@ -105,7 +105,7 @@ export const MainView = () => {
                                 films.map((film) => {
                                     return <FilmCard
                                             film={film}
-                                            key={films._id}>
+                                            key={film.id}>
                                          </FilmCard>
                                 })
                             ) : (
