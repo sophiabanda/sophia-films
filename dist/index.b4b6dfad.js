@@ -46584,11 +46584,10 @@ var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 const NavBar = ({ user , onLoggedOut  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
+        className: "navbar",
         bg: "light",
         expand: "lg",
-        style: {
-            margin: "10px"
-        },
+        sticky: "top",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar).Brand, {
@@ -46654,7 +46653,16 @@ const NavBar = ({ user , onLoggedOut  })=>{
                                         columnNumber: 17
                                     }, undefined)
                                 ]
-                            }, void 0, true)
+                            }, void 0, true),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Nav).Link, {
+                                as: (0, _reactRouterDom.Link),
+                                to: "/users/:username",
+                                children: "Profile"
+                            }, void 0, false, {
+                                fileName: "src/components/nav-bar/nav-bar.jsx",
+                                lineNumber: 33,
+                                columnNumber: 13
+                            }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/nav-bar/nav-bar.jsx",
@@ -46697,7 +46705,6 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ProfileView", ()=>ProfileView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
 const ProfileView = ({})=>{
@@ -46716,17 +46723,13 @@ const ProfileView = ({})=>{
 };
 _c = ProfileView;
 var _c;
-return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {}, void 0, false, {
-    fileName: "src/components/profile-view/profile-view.jsx",
-    lineNumber: 26,
-    columnNumber: 5
-}, undefined);
+$RefreshReg$(_c, "ProfileView");
 
   $parcel$ReactRefreshHelpers$3c12.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}],"lJZlQ":[function() {},{}]},["01S1g","lrYXS","d8Dch"], "d8Dch", "parcelRequire94c2")
+},{"react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}],"lJZlQ":[function() {},{}]},["01S1g","lrYXS","d8Dch"], "d8Dch", "parcelRequire94c2")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

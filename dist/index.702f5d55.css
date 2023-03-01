@@ -12036,4 +12036,9 @@ body, #formUsername, #formPassword, #formEmail, #formBirthday {
   padding: 10px;
 }
 
+.navbar {
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
 /*# sourceMappingURL=index.702f5d55.css.map */
