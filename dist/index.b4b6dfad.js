@@ -46094,7 +46094,7 @@ var _s = $RefreshSig$();
 const FilmDetails = ({ films  })=>{
     _s();
     const { filmId  } = (0, _reactRouterDom.useParams)();
-    const film = films.find((b)=>b.id === filmId);
+    const film = films.find((f)=>f.id === filmId);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
         md: 9,
         children: [

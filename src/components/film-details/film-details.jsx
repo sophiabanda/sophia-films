@@ -6,7 +6,7 @@ import './film-details.scss'
 export const FilmDetails = ({ films }) => {
     const { filmId } = useParams();
 
-    const film = films.find((b) => b.id === filmId)
+    const film = films.find((f) => f.id === filmId)
 
     return (
         <Col md={9}>
