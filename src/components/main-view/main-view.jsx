@@ -5,6 +5,7 @@ import { LoginView } from '../login-view/login-view';
 import { SignUp } from '../signup-view/signup-view';
 import { Button, Row } from 'react-bootstrap';
 import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import { NavBar } from '../nav-bar/nav-bar';
 
 
 export const MainView = () => {
@@ -53,7 +54,8 @@ export const MainView = () => {
     //token added to 2nd arg/dependency array to ensure fetch is called every time the token changes, ie, after login
 
     return (
-    <BrowserRouter>
+        <BrowserRouter>
+        <NavBar></NavBar>
             <Row>
                 <Routes>
                     <Route
