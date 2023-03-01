@@ -6,6 +6,7 @@ import { SignUp } from '../signup-view/signup-view';
 import { Row } from 'react-bootstrap';
 import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 import { NavBar } from '../nav-bar/nav-bar';
+import { ProfileView } from '../profile-view/profile-view';
 
 
 export const MainView = () => {
@@ -23,7 +24,7 @@ export const MainView = () => {
         }
 
         fetch(`https://sophia-films.herokuapp.com/films`, {
-            //where do we learn to set this properly? I see we can add them in postman
+            //this should be added to the films api docs:
             headers: { Authorization: `Bearer ${token}` }
         })
         .then((res) => res.json())
@@ -113,6 +114,12 @@ export const MainView = () => {
                                 <LoginView />
                             )}
                         </>
+                    }
+                    ></Route>
+                    <Route
+                    path='/profile/:username'
+                    element={
+                        <ProfileView></ProfileView>
                     }
                     ></Route>
                 </Routes>

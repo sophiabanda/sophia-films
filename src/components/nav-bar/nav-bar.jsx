@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const NavBar = ({ user, onLoggedOut }) => {
 
   return (
-    <Navbar bg="light" expand="lg" style={{margin: '20px'}}>
+    <Navbar bg="light" expand="lg" style={{margin: '10px'}}>
       <Container>
         <Navbar.Brand as={Link} to="/">
           Sophia Films
@@ -30,7 +30,6 @@ export const NavBar = ({ user, onLoggedOut }) => {
                 <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
               </>
             )}
-            {}
           </Nav>
         </Navbar.Collapse>
       </Container>
