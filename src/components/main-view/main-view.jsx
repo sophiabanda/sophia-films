@@ -3,7 +3,7 @@ import { FilmCard } from '../film-card/film-card';
 import { FilmDetails } from '../film-details/film-details';
 import { LoginView } from '../login-view/login-view';
 import { SignUp } from '../signup-view/signup-view';
-import { Button, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 import { NavBar } from '../nav-bar/nav-bar';
 
@@ -13,7 +13,6 @@ export const MainView = () => {
     const storedToken = localStorage.getItem('token');
     //stores user token locally to keep user logged in after sign-in
     const [films, setFilms] = useState([]);
-    const [selectedFilm, setSelectedFilm] = useState(null);
     const [user, setUser] = useState(storedUser ? storedUser : null);
     const [token, setToken] = useState(storedToken ? storedToken : null);
     //checks for user and token
