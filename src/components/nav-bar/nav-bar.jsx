@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const NavBar = ({ user, onLoggedOut }) => {
 
   return (
-    <Navbar className='navbar' bg="light" expand="lg" sticky='top'>
+    <Navbar className='navbar' variant='dark' bg="primary" expand="lg" sticky='top'>
       <Container>
         <Navbar.Brand as={Link} to="/">
           Sophia Films

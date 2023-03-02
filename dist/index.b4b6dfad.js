@@ -46117,7 +46117,7 @@ const FilmDetails = ({ films  })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                 to: `/`,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                    variant: "danger",
+                    variant: "outline-light",
                     style: {
                         cursor: "pointer",
                         width: "350px"
@@ -46585,7 +46585,8 @@ var _reactRouterDom = require("react-router-dom");
 const NavBar = ({ user , onLoggedOut  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Navbar), {
         className: "navbar",
-        bg: "light",
+        variant: "dark",
+        bg: "primary",
         expand: "lg",
         sticky: "top",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {

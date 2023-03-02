@@ -11,7 +11,7 @@ export const FilmDetails = ({ films }) => {
     return (
         <Col md={9}>
             <Link to={`/`}>
-            <Button variant='danger' style={{cursor: 'pointer', width: '350px'}}>Back</Button>
+            <Button variant='outline-light' style={{cursor: 'pointer', width: '350px'}}>Back</Button>
             </Link>
             <div>
                 <img className="detail-poster" src={film.image}></img>
