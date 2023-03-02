@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const NavBar = ({ user, onLoggedOut }) => {
 
+
   return (
     <Navbar className='navbar' variant='dark' bg="primary" expand="lg" sticky='top'>
       <Container>
@@ -30,7 +31,7 @@ export const NavBar = ({ user, onLoggedOut }) => {
                 <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
               </>
             )}
-            <Nav.Link as={Link} to='/users/:username'>Profile</Nav.Link>
+            <Nav.Link as={Link} to='/users'>Profile</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

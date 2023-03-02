@@ -25,6 +25,7 @@ export const MainView = () => {
 
         fetch(`https://sophia-films.herokuapp.com/films`, {
             //this should be added to the films api docs:
+            // method: 'GET',
             headers: { Authorization: `Bearer ${token}` }
         })
         .then((res) => res.json())
@@ -117,7 +118,7 @@ export const MainView = () => {
                     }
                     ></Route>
                     <Route
-                    path='/profile/:username'
+                    path='/users'
                     element={
                         <ProfileView></ProfileView>
                     }
