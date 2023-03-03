@@ -4,7 +4,6 @@ import { Form, Button } from 'react-bootstrap';
 export const UpdateView = () => {
 
     const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
     //input will be a string, so state starts as empty string
@@ -15,7 +14,6 @@ export const UpdateView = () => {
 
         const data = {
             Name: username,
-            Password: password,
             Email: email,
             Birthday: birthday
         };

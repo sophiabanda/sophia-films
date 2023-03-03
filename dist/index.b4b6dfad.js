@@ -46833,7 +46833,6 @@ var _s = $RefreshSig$();
 const UpdateView = ()=>{
     _s();
     const [username, setUsername] = (0, _react.useState)("");
-    const [password, setPassword] = (0, _react.useState)("");
     const [email, setEmail] = (0, _react.useState)("");
     const [birthday, setBirthday] = (0, _react.useState)("");
     //input will be a string, so state starts as empty string
@@ -46842,7 +46841,6 @@ const UpdateView = ()=>{
         //prevents default behavior of page reloading every time a field is submitted. default form behavior it to reload the entire page with submit.
         const data = {
             Name: username,
-            Password: password,
             Email: email,
             Birthday: birthday
         };
@@ -46869,7 +46867,7 @@ const UpdateView = ()=>{
                         children: "Update Username: "
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 43,
+                        lineNumber: 41,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -46879,13 +46877,13 @@ const UpdateView = ()=>{
                         minLength: "3"
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 44,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/update-view/update-view.jsx",
-                lineNumber: 42,
+                lineNumber: 40,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -46895,7 +46893,7 @@ const UpdateView = ()=>{
                         children: "Update Email: "
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 52,
+                        lineNumber: 50,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -46904,13 +46902,13 @@ const UpdateView = ()=>{
                         onChange: (e)=>setEmail(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 53,
+                        lineNumber: 51,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/update-view/update-view.jsx",
-                lineNumber: 51,
+                lineNumber: 49,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -46920,7 +46918,7 @@ const UpdateView = ()=>{
                         children: "Update Birthday: "
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 60,
+                        lineNumber: 58,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -46929,13 +46927,13 @@ const UpdateView = ()=>{
                         onChange: (e)=>setBirthday(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 61,
+                        lineNumber: 59,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/update-view/update-view.jsx",
-                lineNumber: 59,
+                lineNumber: 57,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -46944,17 +46942,17 @@ const UpdateView = ()=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/update-view/update-view.jsx",
-                lineNumber: 67,
+                lineNumber: 65,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/update-view/update-view.jsx",
-        lineNumber: 41,
+        lineNumber: 39,
         columnNumber: 7
     }, undefined);
 }; //TODO: How can I set the password field to 'show password' during creation and input?
-_s(UpdateView, "tdA1KK8yaZidqYo0wscqshHt/KE=");
+_s(UpdateView, "PfDPOLhENkF5/HeN1jxokv06WEg=");
 _c = UpdateView;
 var _c;
 $RefreshReg$(_c, "UpdateView");
