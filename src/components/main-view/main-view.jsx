@@ -55,7 +55,7 @@ export const MainView = () => {
 
     return (
         <BrowserRouter>
-        <NavBar></NavBar>
+        <NavBar user={user}/>
             <Row>
                 <Routes>
                     <Route
@@ -119,7 +119,7 @@ export const MainView = () => {
                     <Route
                     path='/users'
                     element={
-                        <ProfileView></ProfileView>
+                        <ProfileView loggedInUser={user} ></ProfileView>
                     }
                     ></Route>
                 </Routes>

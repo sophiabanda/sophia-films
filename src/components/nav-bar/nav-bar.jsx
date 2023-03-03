@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export const NavBar = ({ user, onLoggedOut }) => {
 
-
   return (
     <Navbar className='navbar' variant='dark' bg="primary" expand="lg" sticky='top'>
       <Container>
@@ -25,9 +24,6 @@ export const NavBar = ({ user, onLoggedOut }) => {
             )}
             {user && (
               <>
-                <Nav.Link as={Link} to="/">
-                  Home
-                </Nav.Link>
                 <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
               </>
             )}

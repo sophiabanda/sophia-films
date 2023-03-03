@@ -12041,4 +12041,8 @@ body, #formUsername, #formPassword, #formEmail, #formBirthday {
   margin-bottom: 20px;
 }
 
+.modal-header, .modal-body, .modal-footer {
+  background-color: #939494;
+}
+
 /*# sourceMappingURL=index.702f5d55.css.map */
