@@ -6,11 +6,13 @@ export const UpdateView = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
-    //input will be a string, so state starts as empty string
+
+    const updateUser = () => {
+
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        //prevents default behavior of page reloading every time a field is submitted. default form behavior it to reload the entire page with submit.
 
         const data = {
             Name: username,
@@ -18,19 +20,11 @@ export const UpdateView = () => {
             Birthday: birthday
         };
 
-        fetch('https://sophia-films.herokuapp.com/users/:Name', {
+        fetch('https://sophia-films.herokuapp.com/users/:id', {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
-            }
-            //tells the server that the data being sent in the request is json so that the server can properly parse the data
-        }).then((response) => {
-            if(response.ok) {
-                alert('Update successful!');
-                window.location.reload();
-            } else {
-                alert('Update failed.')
             }
         })
     };

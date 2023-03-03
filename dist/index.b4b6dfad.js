@@ -46708,6 +46708,7 @@ var _s = $RefreshSig$();
 const ProfileView = ({ loggedInUser  })=>{
     _s();
     const { Name , Birthday  } = loggedInUser;
+    const birthDay = (0, _dateFns.parseISO)(Birthday);
     const [show, setShow] = (0, _react.useState)(false);
     const handleClose = ()=>setShow(false);
     const handleShow = ()=>setShow(true);
@@ -46715,21 +46716,21 @@ const ProfileView = ({ loggedInUser  })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {}, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 21,
+                lineNumber: 23,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: `Name: ${Name}`
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 22,
+                lineNumber: 24,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: `Birthday: ${Birthday}`
+                children: `Birthday: ${birthDay}`
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 23,
+                lineNumber: 25,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -46738,7 +46739,7 @@ const ProfileView = ({ loggedInUser  })=>{
                 children: "Update User Information"
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 24,
+                lineNumber: 26,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Modal), {
@@ -46751,23 +46752,23 @@ const ProfileView = ({ loggedInUser  })=>{
                             children: "Update Your Info:"
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 30,
+                            lineNumber: 32,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 29,
+                        lineNumber: 31,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Modal).Body, {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _updateView.UpdateView), {}, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 32,
+                            lineNumber: 34,
                             columnNumber: 23
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 32,
+                        lineNumber: 34,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Modal).Footer, {
@@ -46778,7 +46779,7 @@ const ProfileView = ({ loggedInUser  })=>{
                                 children: "Close"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 34,
+                                lineNumber: 36,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -46787,24 +46788,23 @@ const ProfileView = ({ loggedInUser  })=>{
                                 children: "Save Changes"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 37,
+                                lineNumber: 39,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 33,
+                        lineNumber: 35,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 28,
+                lineNumber: 30,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true);
-// TODO: Create onClick that will open update-view MODAL
 };
 _s(ProfileView, "NKb1ZOdhT+qUsWLXSgjSS2bk2C4=");
 _c = ProfileView;
@@ -46835,26 +46835,20 @@ const UpdateView = ()=>{
     const [username, setUsername] = (0, _react.useState)("");
     const [email, setEmail] = (0, _react.useState)("");
     const [birthday, setBirthday] = (0, _react.useState)("");
-    //input will be a string, so state starts as empty string
+    const updateUser = ()=>{};
     const handleSubmit = (e)=>{
         e.preventDefault();
-        //prevents default behavior of page reloading every time a field is submitted. default form behavior it to reload the entire page with submit.
         const data = {
             Name: username,
             Email: email,
             Birthday: birthday
         };
-        fetch("https://sophia-films.herokuapp.com/users/:Name", {
+        fetch("https://sophia-films.herokuapp.com/users/:id", {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then((response)=>{
-            if (response.ok) {
-                alert("Update successful!");
-                window.location.reload();
-            } else alert("Update failed.");
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
@@ -46867,7 +46861,7 @@ const UpdateView = ()=>{
                         children: "Update Username: "
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 41,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -46877,13 +46871,13 @@ const UpdateView = ()=>{
                         minLength: "3"
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 42,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/update-view/update-view.jsx",
-                lineNumber: 40,
+                lineNumber: 34,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -46893,7 +46887,7 @@ const UpdateView = ()=>{
                         children: "Update Email: "
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 50,
+                        lineNumber: 44,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -46902,13 +46896,13 @@ const UpdateView = ()=>{
                         onChange: (e)=>setEmail(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 51,
+                        lineNumber: 45,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/update-view/update-view.jsx",
-                lineNumber: 49,
+                lineNumber: 43,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -46918,7 +46912,7 @@ const UpdateView = ()=>{
                         children: "Update Birthday: "
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 58,
+                        lineNumber: 52,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -46927,13 +46921,13 @@ const UpdateView = ()=>{
                         onChange: (e)=>setBirthday(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 59,
+                        lineNumber: 53,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/update-view/update-view.jsx",
-                lineNumber: 57,
+                lineNumber: 51,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -46942,13 +46936,13 @@ const UpdateView = ()=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/update-view/update-view.jsx",
-                lineNumber: 65,
+                lineNumber: 59,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/update-view/update-view.jsx",
-        lineNumber: 39,
+        lineNumber: 33,
         columnNumber: 7
     }, undefined);
 }; //TODO: How can I set the password field to 'show password' during creation and input?

@@ -1,6 +1,6 @@
 import { Button, Modal } from 'react-bootstrap';
 import { useState } from 'react'
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 import { UpdateView } from '../update-view/update-view';
 
@@ -12,6 +12,9 @@ export const ProfileView = ( {loggedInUser} ) => {
 
   const { Name, Birthday } = loggedInUser
 
+  const birthDay = parseISO(Birthday)
+  //Currently showing my birthdate as 20 hours earlier than it is.
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -20,7 +23,7 @@ export const ProfileView = ( {loggedInUser} ) => {
       <>
         <img></img>
         <h1>{`Name: ${Name}`}</h1>
-        <h3>{`Birthday: ${Birthday}`}</h3>
+        <h3>{`Birthday: ${birthDay}`}</h3>
         <Button variant="primary" onClick={handleShow}>
           Update User Information
         </Button>
@@ -41,5 +44,4 @@ export const ProfileView = ( {loggedInUser} ) => {
         </Modal>
       </>
     );
-  // TODO: Create onClick that will open update-view MODAL
 }
