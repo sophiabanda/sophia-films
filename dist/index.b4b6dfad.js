@@ -46709,6 +46709,7 @@ const ProfileView = ({ loggedInUser  })=>{
     _s();
     const { Name , Birthday  } = loggedInUser;
     const birthDay = (0, _dateFns.parseISO)(Birthday);
+    //Currently showing my birthdate as 20 hours earlier than it is.
     const [show, setShow] = (0, _react.useState)(false);
     const handleClose = ()=>setShow(false);
     const handleShow = ()=>setShow(true);
@@ -46716,21 +46717,21 @@ const ProfileView = ({ loggedInUser  })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {}, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 23,
+                lineNumber: 24,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: `Name: ${Name}`
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: `Birthday: ${birthDay}`
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -46739,7 +46740,7 @@ const ProfileView = ({ loggedInUser  })=>{
                 children: "Update User Information"
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 26,
+                lineNumber: 27,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Modal), {
@@ -46752,23 +46753,23 @@ const ProfileView = ({ loggedInUser  })=>{
                             children: "Update Your Info:"
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 31,
+                        lineNumber: 32,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Modal).Body, {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _updateView.UpdateView), {}, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 34,
+                            lineNumber: 35,
                             columnNumber: 23
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 34,
+                        lineNumber: 35,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Modal).Footer, {
@@ -46779,7 +46780,7 @@ const ProfileView = ({ loggedInUser  })=>{
                                 children: "Close"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 36,
+                                lineNumber: 37,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -46788,19 +46789,19 @@ const ProfileView = ({ loggedInUser  })=>{
                                 children: "Save Changes"
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 39,
+                                lineNumber: 40,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 35,
+                        lineNumber: 36,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 9
             }, undefined)
         ]
