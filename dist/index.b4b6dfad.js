@@ -27181,7 +27181,7 @@ const MainView = ()=>{
         if (!token) return;
         fetch(`https://sophia-films.herokuapp.com/films`, {
             //this should be added to the films api docs:
-            method: "GET",
+            // method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -27201,9 +27201,8 @@ const MainView = ()=>{
             });
             const fetchedFilms = filmAPI.sort((a, b)=>a.title.localeCompare(b.title));
             setFilms(fetchedFilms);
-            //With fetchedFilms we're requesting the the initially returned array be sorted alphabetically with sort & localCompare
-            //Doing this before they're set as state ensures faster performance by ensuring we do not sort with every re-render in return.
-            console.log(fetchedFilms);
+        //With fetchedFilms we're requesting the the initially returned array be sorted alphabetically with sort & localCompare
+        //Doing this before they're set as state ensures faster performance by ensuring we do not sort with every re-render in return.
         //fetchedFilms is the alphabetical array
         });
     }, [
@@ -27214,7 +27213,7 @@ const MainView = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBar.NavBar), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 59,
+                lineNumber: 58,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -27229,7 +27228,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 62,
+                            lineNumber: 61,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27246,7 +27245,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 74,
+                            lineNumber: 73,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27263,7 +27262,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 89,
+                            lineNumber: 88,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27277,7 +27276,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 103,
+                            lineNumber: 102,
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27285,24 +27284,24 @@ const MainView = ()=>{
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 120,
+                            lineNumber: 119,
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 61,
+                    lineNumber: 60,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 60,
+                lineNumber: 59,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 58,
+        lineNumber: 57,
         columnNumber: 9
     }, undefined);
 } //Button's length is exceeding the size of the row container.
@@ -46723,9 +46722,13 @@ const ProfileView = ()=>{
             headers: {
                 Authorization: `Bearer ${token}`
             }
-        }).then((res)=>res.json()).then((res)=>{
-            console.log(res);
-            setUsername(res.Name);
+        }).then((res)=>res.json()).then((r)=>{
+            console.log(r);
+            return {
+                username: r.Name,
+                password: r.Password,
+                birthday: r.Birthday
+            };
         });
     }, [
         token
@@ -46734,21 +46737,21 @@ const ProfileView = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {}, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 25,
+                lineNumber: 30,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: `Name: ${username}`
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 26,
+                lineNumber: 31,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: `Birthday: ${user.birthday}`
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 27,
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined)
         ]

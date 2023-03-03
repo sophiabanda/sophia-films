@@ -48,7 +48,6 @@ export const MainView = () => {
             setFilms(fetchedFilms);
             //With fetchedFilms we're requesting the the initially returned array be sorted alphabetically with sort & localCompare
             //Doing this before they're set as state ensures faster performance by ensuring we do not sort with every re-render in return.
-            console.log(fetchedFilms)
             //fetchedFilms is the alphabetical array
         })
     }, [token]);

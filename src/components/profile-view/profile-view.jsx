@@ -8,15 +8,20 @@ export const ProfileView = () => {
   const [token] = useState(storedToken ? storedToken : null);
   const [username, setUsername] = useState('');
 
+
   useEffect(() => {
     fetch(`https://sophia-films.herokuapp.com/users`, {
       method: 'GET',
       headers: { Authorization: `Bearer ${token}` }
     })
     .then((res) => res.json())
-    .then((res) => {
-      console.log(res)
-      setUsername(res.Name)
+    .then((r) => {
+      console.log(r)
+      return {
+        username: r.Name,
+        password: r.Password,
+        birthday: r.Birthday
+      }
     })
   }, [token])
 
