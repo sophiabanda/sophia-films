@@ -12036,4 +12036,13 @@ body, #formUsername, #formPassword, #formEmail, #formBirthday {
   padding: 10px;
 }
 
+.navbar {
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.modal-header, .form-label {
+  color: #3b3939;
+}
+
 /*# sourceMappingURL=index.702f5d55.css.map */
