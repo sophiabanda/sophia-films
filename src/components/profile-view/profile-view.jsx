@@ -1,6 +1,6 @@
 import { Button, Modal } from 'react-bootstrap';
 import { useState } from 'react'
-import { format, parseISO } from 'date-fns';
+import { parseISO } from 'date-fns';
 
 import { UpdateView } from '../update-view/update-view';
 
