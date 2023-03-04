@@ -4,10 +4,6 @@ import { parseISO } from 'date-fns';
 
 import { UpdateView } from '../update-view/update-view';
 
-// create state for modal
-
-
-
 export const ProfileView = ( {loggedInUser} ) => {
 
   const { Name, Birthday } = loggedInUser
