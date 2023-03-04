@@ -27183,7 +27183,6 @@ const MainView = ()=>{
                 Authorization: `Bearer ${token}`
             }
         }).then((res)=>res.json()).then((data)=>{
-            console.log(data);
             //initial returned array
             const filmAPI = data.map((item)=>{
                 const genres = item.Genres.map((genre)=>genre.Type);
@@ -27199,9 +27198,8 @@ const MainView = ()=>{
             });
             const fetchedFilms = filmAPI.sort((a, b)=>a.title.localeCompare(b.title));
             setFilms(fetchedFilms);
-            //With fetchedFilms we're requesting the the initially returned array be sorted alphabetically with sort & localCompare
-            //Doing this before they're set as state ensures faster performance by ensuring we do not sort with every re-render in return.
-            console.log(fetchedFilms);
+        //With fetchedFilms we're requesting the the initially returned array be sorted alphabetically with sort & localCompare
+        //Doing this before they're set as state ensures faster performance by ensuring we do not sort with every re-render in return.
         //fetchedFilms is the alphabetical array
         });
     }, [
@@ -27215,13 +27213,13 @@ const MainView = ()=>{
                     onLoggedIn: (user)=>setUser(user)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 59,
+                    lineNumber: 57,
                     columnNumber: 19
                 }, undefined),
                 " or ",
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignUp), {}, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 59,
+                    lineNumber: 57,
                     columnNumber: 73
                 }, undefined)
             ]
@@ -27230,13 +27228,13 @@ const MainView = ()=>{
             backButtonClick: ()=>setSelectedFilm(null)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 62,
+            lineNumber: 60,
             columnNumber: 25
         }, undefined) : films.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: "Sorry, no films to display!"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 64,
+            lineNumber: 62,
             columnNumber: 25
         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
@@ -27253,7 +27251,7 @@ const MainView = ()=>{
                     children: "Logout"
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 67,
+                    lineNumber: 65,
                     columnNumber: 19
                 }, undefined),
                 films.map((film)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filmCard.FilmCard), {
@@ -27263,18 +27261,17 @@ const MainView = ()=>{
                         }
                     }, films.id, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 69,
+                        lineNumber: 67,
                         columnNumber: 25
                     }, undefined))
             ]
         }, void 0, true)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 56,
+        lineNumber: 54,
         columnNumber: 9
     }, undefined);
-} //Button's length is exceeding the size of the row container.
-;
+};
 _s(MainView, "cyVLFkHuUdOW83KCwohxGQYJsis=");
 _c = MainView;
 var _c;
@@ -27311,7 +27308,7 @@ const FilmCard = ({ film , onFilmClick  })=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
                     src: film.image,
                     className: "poster"
-                }, film._id, false, {
+                }, void 0, false, {
                     fileName: "src/components/film-card/film-card.jsx",
                     lineNumber: 9,
                     columnNumber: 21
