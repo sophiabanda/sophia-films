@@ -7,6 +7,7 @@ import { Row } from 'react-bootstrap';
 import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 import { NavBar } from '../nav-bar/nav-bar';
 import { ProfileView } from '../profile-view/profile-view';
+import { UpdateView } from '../update-view/update-view';
 
 
 export const MainView = () => {
@@ -120,6 +121,12 @@ export const MainView = () => {
                     path='/users'
                     element={
                         <ProfileView loggedInUser={user} ></ProfileView>
+                    }
+                    ></Route>
+                    <Route
+                    path='/users:id'
+                    element={
+                        <UpdateView storedToken={token} storedUser={user} />
                     }
                     ></Route>
                 </Routes>

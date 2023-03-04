@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
-export const UpdateView = () => {
+export const UpdateView = ({ }) => {
+
+    const { id } = useParams();
 
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -11,19 +14,21 @@ export const UpdateView = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const data = {
+        const userInfo = {
             Name: username,
             Email: email,
             Birthday: birthday
         };
 
-        fetch('https://sophia-films.herokuapp.com/users/:id', {
+        fetch('https://sophia-films.herokuapp.com/users/id/:id', {
             method: 'PUT',
-            body: JSON.stringify(data),
+            body: JSON.stringify(userInfo),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`
             }
-        })
+        }).then((res) => res.json())
+          console.log(res)
     };
 
   return (
@@ -58,6 +63,7 @@ export const UpdateView = () => {
   );
 };
 
-//TODO: How can I set the password field to 'show password' during creation and input?
+
+
 
 
