@@ -7,9 +7,6 @@ export const UpdateView = () => {
     const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
 
-    const updateUser = () => {
-
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
