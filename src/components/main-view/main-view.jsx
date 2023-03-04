@@ -78,5 +78,3 @@ export const MainView = () => {
         </Row>
     )
 }
-
-//Button's length is exceeding the size of the row container.
