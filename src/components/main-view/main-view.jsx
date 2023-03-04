@@ -67,7 +67,7 @@ export const MainView = () => {
                   <Button className='logout-button' style={{cursor: 'pointer'}} onClick={() => {setUser(null); setToken(null); localStorage.clear()}}>Logout</Button>
                     {films.map((film) => (
                         <FilmCard
-                        key={films._id}
+                        key={films.id}
                         film={film}
                         onFilmClick={(newSelectedFilm) => {setSelectedFilm(newSelectedFilm)}}
                         ></FilmCard>

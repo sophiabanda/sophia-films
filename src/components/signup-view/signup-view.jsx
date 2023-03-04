@@ -65,7 +65,7 @@ export const SignUp = () => {
           type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          requireds
+          required
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId='formBirthday'>

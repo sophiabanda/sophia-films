@@ -27261,7 +27261,7 @@ const MainView = ()=>{
                         onFilmClick: (newSelectedFilm)=>{
                             setSelectedFilm(newSelectedFilm);
                         }
-                    }, films._id, false, {
+                    }, films.id, false, {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 69,
                         columnNumber: 25
@@ -41465,7 +41465,7 @@ const SignUp = ()=>{
                         type: "email",
                         value: email,
                         onChange: (e)=>setEmail(e.target.value),
-                        requireds: true
+                        required: true
                     }, void 0, false, {
                         fileName: "src/components/signup-view/signup-view.jsx",
                         lineNumber: 64,
