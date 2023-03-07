@@ -118,15 +118,9 @@ export const MainView = () => {
                     }
                     ></Route>
                     <Route
-                    path='/users'
+                    path='/user/id/:id'
                     element={
-                        <ProfileView loggedInUser={user} ></ProfileView>
-                    }
-                    ></Route>
-                    <Route
-                    path='/users:id'
-                    element={
-                        <UpdateView storedToken={token} storedUser={user} />
+                        <ProfileView loggedInUser={user} storedToken={token} ></ProfileView>
                     }
                     ></Route>
                 </Routes>
@@ -134,5 +128,5 @@ export const MainView = () => {
         </BrowserRouter>
     )
 }
-//Button's length is exceeding the size of the row container.
+
 

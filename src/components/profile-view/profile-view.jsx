@@ -1,25 +1,24 @@
 import { Button, Modal } from 'react-bootstrap';
 import { useState } from 'react'
-import { parseISO } from 'date-fns';
 
 import { UpdateView } from '../update-view/update-view';
 
-export const ProfileView = ( {loggedInUser} ) => {
+export const ProfileView = ( {loggedInUser, storedToken} ) => {
 
   const { Name, Birthday } = loggedInUser
 
-  const birthDay = parseISO(Birthday)
-  //Currently showing my birthdate as 20 hours earlier than it is.
+  const birthDay = new Date(Birthday).toLocaleDateString();
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
     return (
       <>
         <img></img>
         <h1>{`Name: ${Name}`}</h1>
-        <h3>{`Birthday: ${Birthday}`}</h3>
+        <h3>{`Birthday: ${birthDay}`}</h3>
         <Button variant="primary" onClick={handleShow}>
           Update User Information
         </Button>
@@ -28,12 +27,12 @@ export const ProfileView = ( {loggedInUser} ) => {
           <Modal.Header closeButton>
             <Modal.Title>Update Your Info:</Modal.Title>
           </Modal.Header>
-          <Modal.Body><UpdateView/></Modal.Body>
+          <Modal.Body><UpdateView loggedInUser={loggedInUser} storedToken={storedToken}/></Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" type='submit' onClick={handleClose}>
               Save Changes
             </Button>
           </Modal.Footer>
