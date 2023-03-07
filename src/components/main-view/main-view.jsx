@@ -54,7 +54,7 @@ export const MainView = () => {
 
     return (
         <BrowserRouter>
-        <NavBar user={user} token={token} />
+        <NavBar user={user} token={token} onLoggedOut={(user, token) => {setUser(null); setToken(null); localStorage.clear()}} />
             <Row>
                 <Routes>
                     <Route

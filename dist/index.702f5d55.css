@@ -12017,11 +12017,6 @@ body, #formUsername, #formPassword, #formEmail, #formBirthday {
   color: #fff;
 }
 
-.logout-button {
-  width: -webkit-fill-available;
-  margin: 20px;
-}
-
 .detail-poster {
   width: 100%;
   margin: 10px;
