@@ -21,7 +21,7 @@ export const ProfileView = ( {loggedInUser, storedToken} ) => {
       <>
         <img></img>
         <h1>{`Name: ${Name}`}</h1>
-        <h3>{`Birthday: ${Birthday}`}</h3>
+        <h3>{`Birthday: ${birthDay}`}</h3>
         <Button variant="primary" onClick={handleShow}>
           Update User Information
         </Button>

@@ -17,12 +17,6 @@ export const MainView = () => {
     const [token, setToken] = useState(storedToken ? storedToken : null);
     //checks for user and token
 
-    // const onLoggedOut = function () {
-    //     setUser(null);
-    //     setToken(null);
-    //     localStorage.clear();
-    //   };
-
     useEffect(() => {
         if(!token) {
             return;
