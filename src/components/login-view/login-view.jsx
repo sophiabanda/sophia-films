@@ -12,9 +12,6 @@ export const LoginView = ({onLoggedIn}) => {
         event.preventDefault();
 
         const data = {
-            //what are access and secret referring to here? our api? passport? jwt? what gateway is this?
-            //how do we go about making the proper connection here? I assumed it was:
-            //'Name' because of how I set up the create object in my api, 'Password', etc
             Name: username,
             Password: password
         };
@@ -24,7 +21,6 @@ export const LoginView = ({onLoggedIn}) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            //should exist in docs. "expect to include these headers". there are other foms, botincl. api's have restriction for what kind of data it expects.
             body: JSON.stringify(data)
         }).then((response) => response.json())
           .then((data) => {
