@@ -1,7 +1,7 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const NavBar = ({ user, onLoggedOut }) => {
+export const NavBar = ({ user }) => {
 
 
   return (
@@ -25,8 +25,8 @@ export const NavBar = ({ user, onLoggedOut }) => {
             )}
             {user && (
               <>
-                <Nav.Link as={Link} to={`/user/id/${user._id}`} >Profile</Nav.Link>
-                <Nav.Link onClick={onLoggedOut} >Logout</Nav.Link>
+                <Nav.Link as={Link} to={`/user/id/${user._id}`}>Profile</Nav.Link>
+                <Nav.Link>Logout</Nav.Link>
               </>
             )}
           </Nav>

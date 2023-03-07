@@ -7,8 +7,6 @@ import { Row } from 'react-bootstrap';
 import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 import { NavBar } from '../nav-bar/nav-bar';
 import { ProfileView } from '../profile-view/profile-view';
-import { UpdateView } from '../update-view/update-view';
-
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -19,11 +17,11 @@ export const MainView = () => {
     const [token, setToken] = useState(storedToken ? storedToken : null);
     //checks for user and token
 
-    const onLoggedOut = function () {
-        setUser(null);
-        setToken(null);
-        localStorage.clear();
-      };
+    // const onLoggedOut = function () {
+    //     setUser(null);
+    //     setToken(null);
+    //     localStorage.clear();
+    //   };
 
     useEffect(() => {
         if(!token) {
@@ -62,7 +60,7 @@ export const MainView = () => {
 
     return (
         <BrowserRouter>
-        <NavBar user={user} token={token} onLoggedOut={onLoggedOut}/>
+        <NavBar user={user} token={token} />
             <Row>
                 <Routes>
                     <Route
@@ -126,7 +124,7 @@ export const MainView = () => {
                     <Route
                     path='/user/id/:id'
                     element={
-                        <ProfileView loggedInUser={user} storedToken={token} ></ProfileView>
+                        <ProfileView loggedInUser={user} storedToken={token}></ProfileView>
                     }
                     ></Route>
                 </Routes>
