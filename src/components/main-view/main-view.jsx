@@ -19,6 +19,12 @@ export const MainView = () => {
     const [token, setToken] = useState(storedToken ? storedToken : null);
     //checks for user and token
 
+    const onLoggedOut = function () {
+        setUser(null);
+        setToken(null);
+        localStorage.clear();
+      };
+
     useEffect(() => {
         if(!token) {
             return;
@@ -56,7 +62,7 @@ export const MainView = () => {
 
     return (
         <BrowserRouter>
-        <NavBar user={user}/>
+        <NavBar user={user} token={token} onLoggedOut={onLoggedOut}/>
             <Row>
                 <Routes>
                     <Route

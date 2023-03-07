@@ -7,6 +7,8 @@ export const ProfileView = ( {loggedInUser, storedToken} ) => {
 
   const { Name, Birthday } = loggedInUser
 
+  console.log(loggedInUser)
+
   const birthDay = new Date(Birthday).toLocaleDateString();
 
   const [show, setShow] = useState(false);
@@ -18,7 +20,7 @@ export const ProfileView = ( {loggedInUser, storedToken} ) => {
       <>
         <img></img>
         <h1>{`Name: ${Name}`}</h1>
-        <h3>{`Birthday: ${birthDay}`}</h3>
+        <h3>{`Birthday: ${Birthday}`}</h3>
         <Button variant="primary" onClick={handleShow}>
           Update User Information
         </Button>
