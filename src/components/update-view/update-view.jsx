@@ -70,6 +70,7 @@ export const UpdateView = ({ storedToken, loggedInUser }) => {
           onChange={(e) => setBirthday(e.target.value)}
           ></Form.Control>
         </Form.Group>
+        <Button onClick={handleSubmit}>Save Changes</Button>
       </Form>
 </>
   );

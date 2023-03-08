@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
 export const SignUp = () => {
@@ -9,39 +9,33 @@ export const SignUp = () => {
     const [birthday, setBirthday] = useState('');
     //input will be a string, so state starts as empty string
 
-    useEffect(() => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        //prevents default behavior of page reloading every time a field is submitted. default form behavior it to reload the entire page with submit.
 
+        const data = {
+            Name: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
+        };
 
-      const handleSubmit = (e) => {
-          e.preventDefault();
-          //prevents default behavior of page reloading every time a field is submitted. default form behavior it to reload the entire page with submit.
-
-          const data = {
-              Name: username,
-              Password: password,
-              Email: email,
-              Birthday: birthday
-          };
-
-          fetch('https://sophia-films.herokuapp.com/users', {
-              method: 'POST',
-              body: JSON.stringify(data),
-              headers: {
-                  'Content-Type': 'application/json'
-              }
-              //tells the server that the data being sent in the request is json so that the server can properly parse the data
-          }).then((response) => {
-              if(response.ok) {
-                  alert('Signup successful!');
-                  window.location.reload();
-              } else {
-                  alert('Signup failed.')
-              }
-          })
-      };
-
-    })
-
+        fetch('https://sophia-films.herokuapp.com/users', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+            //tells the server that the data being sent in the request is json so that the server can properly parse the data
+        }).then((response) => {
+            if(response.ok) {
+                alert('Signup successful!');
+                window.location.reload();
+            } else {
+                alert('Signup failed.')
+            }
+        })
+    };
 
   return (
       <Form onSubmit={handleSubmit}>
@@ -51,6 +45,7 @@ export const SignUp = () => {
           type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          placeholder='Username here'
           required
           minLength='3'
         ></Form.Control>
@@ -59,6 +54,7 @@ export const SignUp = () => {
           <Form.Label>Password: </Form.Label>
           <Form.Control
           type='password'
+          placeholder='Password here'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -69,9 +65,10 @@ export const SignUp = () => {
           <Form.Label>Email: </Form.Label>
           <Form.Control
           type='email'
+          placeholder='Email here'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          requireds
+          required
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId='formBirthday'>
