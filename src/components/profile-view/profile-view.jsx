@@ -1,9 +1,11 @@
 import { Button, Modal } from 'react-bootstrap';
 import { useState } from 'react'
-
+import { Favorites } from './favorites';
 import { UpdateView } from '../update-view/update-view';
 
 export const ProfileView = ( {loggedInUser, storedToken} ) => {
+
+  console.log(loggedInUser)
 
   const { Name, Birthday } = loggedInUser
   const birthDay = new Date(Birthday).toLocaleDateString();
