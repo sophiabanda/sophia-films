@@ -5,10 +5,7 @@ import { UpdateView } from '../update-view/update-view';
 
 export const ProfileView = ( {loggedInUser, storedToken} ) => {
 
-
   const { Name, Birthday } = loggedInUser
-
-
   const birthDay = new Date(Birthday).toLocaleDateString();
 
   const [show, setShow] = useState(false);
