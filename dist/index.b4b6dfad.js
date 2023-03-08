@@ -46834,7 +46834,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react":"21dqq","../update-view/update-view":"kEeMk","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}],"kEeMk":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","../update-view/update-view":"kEeMk"}],"kEeMk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d7d4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -46875,7 +46875,6 @@ const UpdateView = ({ storedToken , loggedInUser  })=>{
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
-            onSubmit: handleSubmit,
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                     controlId: "formPassword",

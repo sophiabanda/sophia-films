@@ -34,7 +34,7 @@ export const UpdateView = ({ storedToken, loggedInUser }) => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <Form.Group controlId='formPassword'>
           <Form.Label>Enter or Update Password: </Form.Label>
           <Form.Control
