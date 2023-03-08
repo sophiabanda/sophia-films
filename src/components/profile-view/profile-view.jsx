@@ -5,7 +5,6 @@ import { UpdateView } from '../update-view/update-view';
 
 export const ProfileView = ( {loggedInUser, storedToken} ) => {
 
-  console.log(loggedInUser)
 
   const { Name, Birthday } = loggedInUser
 
