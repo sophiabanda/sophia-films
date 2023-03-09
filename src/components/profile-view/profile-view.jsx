@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 import { UpdateView } from '../update-view/update-view';
 
-export const ProfileView = ( {loggedInUser, storedToken} ) => {
+export const ProfileView = ( {loggedInUser, storedToken, handleUserUpdate} ) => {
 
   const { Name, Birthday } = loggedInUser
   const birthDay = new Date(Birthday).toLocaleDateString();
@@ -11,6 +11,8 @@ export const ProfileView = ( {loggedInUser, storedToken} ) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  //TODO: Update local storage/ clear local
 
 
     return (
@@ -22,6 +24,7 @@ export const ProfileView = ( {loggedInUser, storedToken} ) => {
           Update User Information
         </Button>
         <UpdateView
+              handleUserUpdate={handleUserUpdate}
               handleClose={handleClose}
               show={show}
               loggedInUser={loggedInUser}

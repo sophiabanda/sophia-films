@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Form, Button, Modal } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
-export const UpdateView = ({ storedToken, loggedInUser, show, handleClose }) => {
+export const UpdateView = ({ storedToken, loggedInUser, show, handleClose, handleUserUpdate }) => {
 
     const { id } = useParams();
 
@@ -29,7 +29,8 @@ export const UpdateView = ({ storedToken, loggedInUser, show, handleClose }) => 
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${storedToken}`
             }
-        }).then((res) => console.log(res))
+        }).then((res) => res.json())
+        .then((user) => handleUserUpdate(user))
         .then(handleClose)
     };
 

@@ -1,6 +1,7 @@
 import { FilmCard } from "../film-card/film-card";
 
 
+
 export const Favorites = ({ loggedInUser }) => {
 
 

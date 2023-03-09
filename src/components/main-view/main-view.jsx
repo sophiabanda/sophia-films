@@ -10,12 +10,18 @@ import { ProfileView } from '../profile-view/profile-view';
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
+    // const storedUser = { }
     const storedToken = localStorage.getItem('token');
     //stores user token locally to keep user logged in after sign-in
     const [films, setFilms] = useState([]);
     const [user, setUser] = useState(storedUser ? storedUser : null);
     const [token, setToken] = useState(storedToken ? storedToken : null);
     //checks for user and token
+
+    const updateUser = (newUser) => {
+        localStorage.setItem('user', JSON.stringify(newUser))
+        setUser(newUser)
+    }
 
     useEffect(() => {
         if(!token) {
@@ -118,7 +124,7 @@ export const MainView = () => {
                     <Route
                     path='/user/id/:id'
                     element={
-                        <ProfileView loggedInUser={user} storedToken={token}></ProfileView>
+                        <ProfileView handleUserUpdate={updateUser} loggedInUser={user} storedToken={token}></ProfileView>
                     }
                     ></Route>
                 </Routes>

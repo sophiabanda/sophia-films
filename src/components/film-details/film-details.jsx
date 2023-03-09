@@ -7,6 +7,9 @@ export const FilmDetails = ({ films }) => {
     const { filmId } = useParams();
 
     const film = films.find((f) => f.id === filmId)
+    console.log(film)
+
+    const favorite = true
 
     return (
         <Col md={9}>
@@ -32,6 +35,7 @@ export const FilmDetails = ({ films }) => {
                 <div>Genres: </div>
                 <div>{film.genres.map(genre => genre.charAt(0).toUpperCase() + genre.slice(1)).join(", ")}</div>
             </div>
+            <Button>{favorite ? "Remove from Favorites" : "Add to Favorites"}</Button>
         </Col>
 
         //.slice returns string, and .join cannot be used on string. Must be called outside of the .map function.
