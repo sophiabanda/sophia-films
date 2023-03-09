@@ -13,7 +13,6 @@ export const UpdateView = ({ storedToken, loggedInUser, show, handleClose, handl
 
 
     const handleSubmit = () => {
-      console.log('this ran')
 
         const userInfo = {
             Name: username,

@@ -46816,7 +46816,6 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
     const [birthday, setBirthday] = (0, _react.useState)(loggedInUser.Birthday);
     const [password, setPassword] = (0, _react.useState)(loggedInUser.Password);
     const handleSubmit = ()=>{
-        console.log("this ran");
         const userInfo = {
             Name: username,
             Password: password,
@@ -46843,12 +46842,12 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                         children: "Update Your Info:"
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 41,
+                        lineNumber: 40,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/update-view/update-view.jsx",
-                    lineNumber: 40,
+                    lineNumber: 39,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Modal).Body, {
@@ -46861,7 +46860,7 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                         children: "Enter or Update Password: "
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
-                                        lineNumber: 46,
+                                        lineNumber: 45,
                                         columnNumber: 19
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -46871,13 +46870,13 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                         minLength: "8"
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
-                                        lineNumber: 47,
+                                        lineNumber: 46,
                                         columnNumber: 19
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/update-view/update-view.jsx",
-                                lineNumber: 45,
+                                lineNumber: 44,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -46887,7 +46886,7 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                         children: "Update Username: "
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
-                                        lineNumber: 55,
+                                        lineNumber: 54,
                                         columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -46897,13 +46896,13 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                         minLength: "3"
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
-                                        lineNumber: 56,
+                                        lineNumber: 55,
                                         columnNumber: 17
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/update-view/update-view.jsx",
-                                lineNumber: 54,
+                                lineNumber: 53,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -46913,7 +46912,7 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                         children: "Update Email: "
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
-                                        lineNumber: 64,
+                                        lineNumber: 63,
                                         columnNumber: 19
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -46922,13 +46921,13 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                         onChange: (e)=>setEmail(e.target.value)
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
-                                        lineNumber: 65,
+                                        lineNumber: 64,
                                         columnNumber: 19
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/update-view/update-view.jsx",
-                                lineNumber: 63,
+                                lineNumber: 62,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -46938,7 +46937,7 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                         children: "Update Birthday: "
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
-                                        lineNumber: 72,
+                                        lineNumber: 71,
                                         columnNumber: 19
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -46947,24 +46946,24 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                         onChange: (e)=>setBirthday(e.target.value)
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
-                                        lineNumber: 73,
+                                        lineNumber: 72,
                                         columnNumber: 19
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/update-view/update-view.jsx",
-                                lineNumber: 71,
+                                lineNumber: 70,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/update-view/update-view.jsx",
-                        lineNumber: 44,
+                        lineNumber: 43,
                         columnNumber: 15
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/update-view/update-view.jsx",
-                    lineNumber: 43,
+                    lineNumber: 42,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Modal).Footer, {
@@ -46975,7 +46974,7 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                             children: "Close"
                         }, void 0, false, {
                             fileName: "src/components/update-view/update-view.jsx",
-                            lineNumber: 82,
+                            lineNumber: 81,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -46984,19 +46983,19 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                             children: "Save Changes"
                         }, void 0, false, {
                             fileName: "src/components/update-view/update-view.jsx",
-                            lineNumber: 85,
+                            lineNumber: 84,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/update-view/update-view.jsx",
-                    lineNumber: 81,
+                    lineNumber: 80,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/update-view/update-view.jsx",
-            lineNumber: 39,
+            lineNumber: 38,
             columnNumber: 5
         }, undefined)
     }, void 0, false);
