@@ -9,7 +9,7 @@ export const FilmDetails = ({ films }) => {
     const film = films.find((f) => f.id === filmId)
     console.log(film)
 
-    const favorite = true
+    const favorite = false
 
     return (
         <Col md={9}>

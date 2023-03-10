@@ -1,10 +1,22 @@
-import { FilmCard } from "../film-card/film-card";
+// import { FilmCard } from "../film-card/film-card";
 
 
 
-export const Favorites = ({ loggedInUser }) => {
+// export const Favorites = ({ loggedInUser, storedToken }) => {
+
+//     console.log(loggedInUser)
 
 
-    console.log(loggedInUser.Favorites)
+// fetch(`https://sophia-films.herokuapp.com/user/id/${loggedInUser._id}`, {
+//     body: JSON.stringify(),
+//     headers: {
+//         Authorization: `Bearer ${storedToken}`,
+//         'Content-Type': 'application/json'
+//     }
+// }).then((res) => res.json())
 
-}
+// return (
+//     <h1>Hello</h1>
+// )
+
+// }

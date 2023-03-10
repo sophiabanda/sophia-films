@@ -46128,7 +46128,7 @@ const FilmDetails = ({ films  })=>{
     const { filmId  } = (0, _reactRouterDom.useParams)();
     const film = films.find((f)=>f.id === filmId);
     console.log(film);
-    const favorite = true;
+    const favorite = false;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
         md: 9,
         children: [
@@ -46730,6 +46730,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactBootstrap = require("react-bootstrap");
 var _react = require("react");
 var _updateView = require("../update-view/update-view");
+var _favorites = require("./favorites");
 var _s = $RefreshSig$();
 const ProfileView = ({ loggedInUser , storedToken , handleUserUpdate  })=>{
     _s();
@@ -46743,21 +46744,29 @@ const ProfileView = ({ loggedInUser , storedToken , handleUserUpdate  })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {}, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 20,
+                lineNumber: 21,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: `Name: ${Name}`
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 21,
+                lineNumber: 22,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: `Birthday: ${birthDay}`
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 22,
+                lineNumber: 23,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favorites.Favorites), {
+                storedToken: storedToken,
+                loggedInUser: loggedInUser
+            }, void 0, false, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 24,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -46766,7 +46775,7 @@ const ProfileView = ({ loggedInUser , storedToken , handleUserUpdate  })=>{
                 children: "Update User Information"
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 23,
+                lineNumber: 25,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _updateView.UpdateView), {
@@ -46777,7 +46786,7 @@ const ProfileView = ({ loggedInUser , storedToken , handleUserUpdate  })=>{
                 storedToken: storedToken
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 26,
+                lineNumber: 28,
                 columnNumber: 9
             }, undefined)
         ]
@@ -46793,7 +46802,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","../update-view/update-view":"kEeMk"}],"kEeMk":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","../update-view/update-view":"kEeMk","./favorites":"loUuy"}],"kEeMk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d7d4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -46843,12 +46852,12 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                     }, void 0, false, {
                         fileName: "src/components/update-view/update-view.jsx",
                         lineNumber: 40,
-                        columnNumber: 13
+                        columnNumber: 15
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/update-view/update-view.jsx",
                     lineNumber: 39,
-                    columnNumber: 11
+                    columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Modal).Body, {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form), {
@@ -46861,7 +46870,7 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
                                         lineNumber: 45,
-                                        columnNumber: 19
+                                        columnNumber: 21
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                         type: "password",
@@ -46871,13 +46880,13 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
                                         lineNumber: 46,
-                                        columnNumber: 19
+                                        columnNumber: 21
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/update-view/update-view.jsx",
                                 lineNumber: 44,
-                                columnNumber: 17
+                                columnNumber: 19
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                                 controlId: "formUsername",
@@ -46887,7 +46896,7 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
                                         lineNumber: 54,
-                                        columnNumber: 17
+                                        columnNumber: 19
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                         type: "text",
@@ -46897,13 +46906,13 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
                                         lineNumber: 55,
-                                        columnNumber: 17
+                                        columnNumber: 19
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/update-view/update-view.jsx",
                                 lineNumber: 53,
-                                columnNumber: 17
+                                columnNumber: 19
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                                 controlId: "formEmail",
@@ -46913,7 +46922,7 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
                                         lineNumber: 63,
-                                        columnNumber: 19
+                                        columnNumber: 21
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                         type: "email",
@@ -46922,13 +46931,13 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
                                         lineNumber: 64,
-                                        columnNumber: 19
+                                        columnNumber: 21
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/update-view/update-view.jsx",
                                 lineNumber: 62,
-                                columnNumber: 17
+                                columnNumber: 19
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
                                 controlId: "formBirthday",
@@ -46938,7 +46947,7 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
                                         lineNumber: 71,
-                                        columnNumber: 19
+                                        columnNumber: 21
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
                                         type: "date",
@@ -46947,24 +46956,24 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                                     }, void 0, false, {
                                         fileName: "src/components/update-view/update-view.jsx",
                                         lineNumber: 72,
-                                        columnNumber: 19
+                                        columnNumber: 21
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/update-view/update-view.jsx",
                                 lineNumber: 70,
-                                columnNumber: 17
+                                columnNumber: 19
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/update-view/update-view.jsx",
                         lineNumber: 43,
-                        columnNumber: 15
+                        columnNumber: 17
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/update-view/update-view.jsx",
                     lineNumber: 42,
-                    columnNumber: 11
+                    columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Modal).Footer, {
                     children: [
@@ -46975,7 +46984,7 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                         }, void 0, false, {
                             fileName: "src/components/update-view/update-view.jsx",
                             lineNumber: 81,
-                            columnNumber: 13
+                            columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                             variant: "primary",
@@ -46984,19 +46993,19 @@ const UpdateView = ({ storedToken , loggedInUser , show , handleClose , handleUs
                         }, void 0, false, {
                             fileName: "src/components/update-view/update-view.jsx",
                             lineNumber: 84,
-                            columnNumber: 13
+                            columnNumber: 15
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/update-view/update-view.jsx",
                     lineNumber: 80,
-                    columnNumber: 11
+                    columnNumber: 13
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/update-view/update-view.jsx",
             lineNumber: 38,
-            columnNumber: 5
+            columnNumber: 7
         }, undefined)
     }, void 0, false);
 };
@@ -47014,6 +47023,22 @@ $RefreshReg$(_c, "UpdateView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}],"lJZlQ":[function() {},{}]},["01S1g","lrYXS","d8Dch"], "d8Dch", "parcelRequire94c2")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}],"loUuy":[function(require,module,exports) {
+// import { FilmCard } from "../film-card/film-card";
+// export const Favorites = ({ loggedInUser, storedToken }) => {
+//     console.log(loggedInUser)
+// fetch(`https://sophia-films.herokuapp.com/user/id/${loggedInUser._id}`, {
+//     body: JSON.stringify(),
+//     headers: {
+//         Authorization: `Bearer ${storedToken}`,
+//         'Content-Type': 'application/json'
+//     }
+// }).then((res) => res.json())
+// return (
+//     <h1>Hello</h1>
+// )
+// }
+
+},{}],"lJZlQ":[function() {},{}]},["01S1g","lrYXS","d8Dch"], "d8Dch", "parcelRequire94c2")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
