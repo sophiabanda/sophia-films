@@ -13,8 +13,6 @@ export const ProfileView = ( {loggedInUser, storedToken, handleUserUpdate} ) => 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //TODO: Update local storage/ clear local
-
 
     return (
       <>
