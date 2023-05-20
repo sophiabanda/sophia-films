@@ -19,6 +19,7 @@ export const ProfileView = ( {loggedInUser, storedToken, handleUserUpdate} ) => 
         <img></img>
         <h1>{`Name: ${Name}`}</h1>
         <h3>{`Birthday: ${birthDay}`}</h3>
+        <h3>Favorite Films:</h3>
         {/* <Favorites storedToken={storedToken} loggedInUser={loggedInUser}/> */}
         <Button variant="primary" onClick={handleShow}>
           Update User Information

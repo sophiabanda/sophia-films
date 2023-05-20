@@ -46760,13 +46760,20 @@ const ProfileView = ({ loggedInUser , storedToken , handleUserUpdate  })=>{
                 lineNumber: 21,
                 columnNumber: 9
             }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: "Favorite Films:"
+            }, void 0, false, {
+                fileName: "src/components/profile-view/profile-view.jsx",
+                lineNumber: 22,
+                columnNumber: 9
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                 variant: "primary",
                 onClick: handleShow,
                 children: "Update User Information"
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 23,
+                lineNumber: 24,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _updateView.UpdateView), {
@@ -46777,7 +46784,7 @@ const ProfileView = ({ loggedInUser , storedToken , handleUserUpdate  })=>{
                 storedToken: storedToken
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 26,
+                lineNumber: 27,
                 columnNumber: 9
             }, undefined)
         ]
@@ -47025,8 +47032,13 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Favorites", ()=>Favorites);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Favorites = ({ loggedInUser , storedToken  })=>{
-    console.log(loggedInUser);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _filmCard = require("../film-card/film-card");
+const Favorites = ({ loggedInUser , film  })=>{
+    let favoriteFilms = film.filter((films)=>{
+        return loggedInUser.favoriteFilms.includes(film._id);
+    });
     fetch(`https://sophia-films.herokuapp.com/user/id/${loggedInUser._id}`, {
         body: JSON.stringify(),
         headers: {
@@ -47038,7 +47050,7 @@ const Favorites = ({ loggedInUser , storedToken  })=>{
         children: "Hello"
     }, void 0, false, {
         fileName: "src/components/profile-view/favorites.jsx",
-        lineNumber: 17,
+        lineNumber: 18,
         columnNumber: 5
     }, undefined);
 };
@@ -47051,6 +47063,6 @@ $RefreshReg$(_c, "Favorites");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ"}],"lJZlQ":[function() {},{}]},["01S1g","lrYXS","d8Dch"], "d8Dch", "parcelRequire94c2")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"a2gzh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6vrlQ","react":"21dqq","../film-card/film-card":"kWafU"}],"lJZlQ":[function() {},{}]},["01S1g","lrYXS","d8Dch"], "d8Dch", "parcelRequire94c2")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
